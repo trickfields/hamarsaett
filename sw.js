@@ -1,5 +1,5 @@
 /* Hamarsætt – vinnuþjónn. Hækkaðu útgáfunúmerið þegar index.html breytist. */
-const V = 'hamarsaett-v2';
+const V = 'hamarsaett-v4';
 const ASSETS = ['./', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-512-maskable.png',
   './apple-touch-icon.png', './favicon.png'];
