@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Niðjatal Stefáns Sigurðssonar og Steinunnar Einarsdóttur á Hamri í Hamarsfirði</title>
+<meta name="description" content="Gagnvirkt ættartré – niðjatal Stefáns Sigurðssonar og Steinunnar Einarsdóttur á Hamri í Hamarsfirði. 349 niðjar í sex ættliðum.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#f3f2ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a1a19" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Hamarsætt">
+<meta property="og:title" content="Niðjatal frá Hamri í Hamarsfirði">
+<meta property="og:description" content="Gagnvirkt ættartré: 349 niðjar Stefáns Sigurðssonar og Steinunnar Einarsdóttur í sex ættliðum.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  color-scheme: light;
+  --surface-0:#f3f2ee; --surface-1:#fcfcfb; --surface-2:#ffffff;
+  --line:#dcdad3; --line-strong:#b9b6ac;
+  --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#7c7a72;
+  --accent:#2a78d6; --accent-soft:#e4eefb;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100;
+  --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948;
+  --neutral:#9a978d;
+  --shadow:0 1px 2px rgba(0,0,0,.06),0 6px 20px rgba(0,0,0,.07);
+}
+@media (prefers-color-scheme: dark){
+  :root:where(:not([data-theme="light"])){
+    color-scheme: dark;
+    --surface-0:#121211; --surface-1:#1a1a19; --surface-2:#232322;
+    --line:#33332f; --line-strong:#4d4c46;
+    --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8f8d83;
+    --accent:#3987e5; --accent-soft:#1b2c42;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500;
+    --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767;
+    --neutral:#6f6d65;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --surface-0:#121211; --surface-1:#1a1a19; --surface-2:#232322;
+  --line:#33332f; --line-strong:#4d4c46;
+  --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8f8d83;
+  --accent:#3987e5; --accent-soft:#1b2c42;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500;
+  --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767;
+  --neutral:#6f6d65;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--surface-0); color:var(--text-primary);
+  overflow:hidden; -webkit-font-smoothing:antialiased;
+}
+button{font:inherit;color:inherit;cursor:pointer}
+
+/* ---------- header ---------- */
+header{
+  position:absolute; inset:0 0 auto 0; z-index:30;
+  display:flex; align-items:center; gap:12px; padding:10px 14px;
+  background:color-mix(in srgb,var(--surface-1) 88%, transparent);
+  backdrop-filter:blur(12px); border-bottom:1px solid var(--line);
+}
+.brand{min-width:0}
+.brand h1{font-size:13.5px;margin:0;font-weight:650;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand p{margin:1px 0 0;font-size:11.5px;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand .short{display:none}
+.spacer{flex:1}
+
+/* ---------- search ---------- */
+.search{position:relative;width:min(360px,42vw);flex:none}
+.search input{
+  width:100%;padding:9px 34px 9px 32px;border-radius:10px;
+  border:1px solid var(--line-strong); background:var(--surface-2);
+  color:var(--text-primary); font-size:13.5px; outline:none;
+}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.search .ico{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-muted);pointer-events:none;font-size:13px}
+.search kbd{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--text-muted);
+  border:1px solid var(--line);border-radius:4px;padding:1px 5px;background:var(--surface-1)}
+.results{
+  position:absolute;top:calc(100% + 6px);left:0;right:0;max-height:min(60vh,420px);overflow:auto;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
+  display:none;padding:5px;
+}
+.results.on{display:block}
+.res{padding:7px 9px;border-radius:8px;cursor:pointer;display:flex;gap:9px;align-items:center}
+.res:hover,.res.sel{background:var(--accent-soft)}
+.res .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.res .nm{font-size:13px;font-weight:550;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.res .yr{font-size:11.5px;color:var(--text-muted);flex:none;font-variant-numeric:tabular-nums}
+.res .via{font-size:11px;color:var(--text-muted);display:block;font-weight:400}
+.res-empty{padding:14px;font-size:12.5px;color:var(--text-muted);text-align:center}
+
+/* ---------- tool buttons ---------- */
+.tools{display:flex;gap:6px;flex:none}
+.tb{
+  background:var(--surface-2);border:1px solid var(--line-strong);border-radius:9px;
+  padding:8px 11px;font-size:12.5px;font-weight:520;line-height:1;white-space:nowrap;
+}
+.tb:hover{border-color:var(--accent);color:var(--accent)}
+.tb.icon{padding:8px 10px;min-width:34px}
+
+/* ---------- stage ---------- */
+#stage{position:absolute;inset:0;touch-action:none;cursor:grab;background:
+  radial-gradient(circle at 1px 1px, var(--line) 1px, transparent 0) 0 0/26px 26px, var(--surface-0);}
+#stage.drag{cursor:grabbing}
+#svg{width:100%;height:100%;display:block}
+.node{cursor:pointer}
+.card{fill:var(--surface-2);stroke:var(--line-strong);stroke-width:1}
+.node:hover .card{stroke:var(--accent)}
+.node.sel .card{stroke:var(--accent);stroke-width:2.5}
+.node.line .card{stroke:var(--accent);stroke-width:1.8}
+.node.dim{opacity:.28}
+.nm{font-size:13px;font-weight:650;fill:var(--text-primary)}
+.yr{font-size:11px;fill:var(--text-secondary);font-variant-numeric:tabular-nums}
+.sp{font-size:11px;fill:var(--text-muted)}
+.edge{fill:none;stroke:var(--line-strong);stroke-width:1.6;stroke-linejoin:round}
+.edge.line{stroke:var(--accent);stroke-width:2.4}
+.edge.dim{opacity:.22}
+.tg{cursor:pointer}
+.tg circle{fill:var(--surface-2);stroke:var(--line-strong);stroke-width:1.4}
+.tg:hover circle{stroke:var(--accent)}
+.tg text{font-size:10.5px;font-weight:700;fill:var(--text-secondary);text-anchor:middle}
+.tg.open text{fill:var(--text-muted)}
+@keyframes pulse{0%{opacity:.85;r:0}70%{opacity:0}100%{opacity:0}}
+.pulse{fill:none;stroke:var(--accent);stroke-width:3;animation:pulse 1.1s ease-out 2}
+
+/* ---------- legend ---------- */
+.legend{
+  position:absolute;left:14px;bottom:14px;z-index:20;
+  background:color-mix(in srgb,var(--surface-1) 92%, transparent);backdrop-filter:blur(10px);
+  border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
+  padding:9px 10px;max-width:230px;
+}
+.legend h3{margin:0 0 7px;font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);font-weight:650}
+.lg{display:flex;align-items:center;gap:7px;padding:3px 5px;border-radius:6px;cursor:pointer;font-size:12px}
+.lg:hover{background:var(--accent-soft)}
+.lg .dot{width:9px;height:9px;border-radius:2px;flex:none}
+.lg .n{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lg .c{color:var(--text-muted);font-size:11px;font-variant-numeric:tabular-nums}
+.legend .hide{margin-top:6px;font-size:11px;color:var(--text-muted);background:none;border:none;padding:3px 5px}
+
+/* ---------- panel ---------- */
+#panel{
+  position:absolute;top:var(--hh,56px);right:0;bottom:0;width:370px;z-index:25;
+  background:var(--surface-1);border-left:1px solid var(--line);
+  transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);
+  overflow:auto;padding:16px 18px 40px;
+}
+#panel.on{transform:none}
+.pclose{position:absolute;top:12px;right:12px;background:none;border:none;font-size:20px;line-height:1;color:var(--text-muted)}
+#panel h2{margin:2px 0 2px;font-size:19px;letter-spacing:-.015em;line-height:1.25;padding-right:26px}
+.pref{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted);margin-top:6px}
+.pref .dot{width:8px;height:8px;border-radius:2px}
+.pdates{margin:9px 0 0;font-size:13.5px;color:var(--text-secondary);font-variant-numeric:tabular-nums}
+.pocc{margin:8px 0 0;font-size:13px;color:var(--text-secondary);line-height:1.5}
+.corr{margin:8px 0 0;font-size:11.5px;color:var(--text-muted);line-height:1.45;
+  border-left:2px solid var(--s4);padding:2px 0 2px 8px}
+.sec{margin-top:20px}
+.sec h4{margin:0 0 7px;font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);font-weight:650}
+.mk{border:1px solid var(--line);border-radius:10px;padding:9px 11px;margin-bottom:7px;background:var(--surface-2)}
+.mk .lb{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);font-weight:600}
+.mk .nm2{font-size:14px;font-weight:600;margin-top:2px}
+.mk .dt{font-size:12px;color:var(--text-secondary);margin-top:2px;font-variant-numeric:tabular-nums}
+.mk .oc{font-size:12px;color:var(--text-muted);margin-top:3px;line-height:1.45}
+.mk .pa{font-size:11px;color:var(--text-muted);margin-top:5px;line-height:1.45;border-top:1px solid var(--line);padding-top:5px}
+.chip{
+  display:block;width:100%;text-align:left;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:7px 10px;margin-bottom:5px;font-size:13px;
+}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip .y{color:var(--text-muted);font-size:11.5px;float:right;font-variant-numeric:tabular-nums}
+.crumb{display:flex;flex-wrap:wrap;gap:3px;align-items:center;font-size:12px}
+.crumb button{background:none;border:none;padding:2px 5px;border-radius:5px;color:var(--accent);font-size:12px}
+.crumb button:hover{background:var(--accent-soft)}
+.crumb span{color:var(--text-muted)}
+.foot{margin-top:26px;padding-top:12px;border-top:1px solid var(--line);font-size:11px;color:var(--text-muted);line-height:1.5}
+
+/* ---------- mobile ---------- */
+@media (max-width:820px){
+  header{flex-wrap:wrap;padding:8px 10px;gap:8px}
+  .brand{order:1;flex:1 1 100%}
+  .search{order:2;flex:1 1 auto;width:auto;min-width:0}
+  .tools{order:3;flex:0 0 auto}
+  .spacer{display:none}
+  .search kbd{display:none}
+  #panel{width:100%;top:auto;height:66vh;border-left:none;border-top:1px solid var(--line);
+    border-radius:16px 16px 0 0;transform:translateY(100%);box-shadow:var(--shadow)}
+  #panel.on{transform:none}
+  .legend{display:none}
+  .brand .long{display:none}
+  .brand .short{display:inline}
+  .tb{padding:8px 9px;font-size:12px}
+}
+
+/* ---------- öruggt svæði þegar keyrt er sem app á síma ---------- */
+header{padding-top:calc(10px + env(safe-area-inset-top,0px))}
+#panel{padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))}
+@media (display-mode:standalone){ .search kbd{display:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <h1><span class="long">Niðjatal Stefáns Sigurðssonar og Steinunnar Einarsdóttur</span><span class="short">Niðjatal frá Hamri</span></h1>
+    <p>Hamri í Hamarsfirði &middot; <span id="cnt"></span></p>
+  </div>
+  <div class="search">
+    <span class="ico">⌕</span>
+    <input id="q" type="search" placeholder="Sláðu inn nafn…" autocomplete="off" spellcheck="false" aria-label="Leita að nafni">
+    <kbd>/</kbd>
+    <div class="results" id="res"></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="tools">
+    <button class="tb" id="btnAll" title="Opna allar greinar">Opna allt</button>
+    <button class="tb" id="btnHome" title="Aftur á ættföðurinn">Heim</button>
+    <button class="tb icon" id="btnOrient" title="Snúa tré: niður / til hliðar">⇅</button>
+    <button class="tb icon" id="btnFit" title="Sýna allt tréð">⤢</button>
+    <button class="tb icon" id="btnTheme" title="Ljóst / dökkt">◐</button>
+  </div>
+</header>
+
+<div id="stage">
+  <svg id="svg"><g id="view"><g id="edges"></g><g id="nodes"></g></g></svg>
+</div>
+
+<div class="legend" id="legend"></div>
+
+<aside id="panel" aria-live="polite"></aside>
+
+<script id="data" type="application/json">[{"i":0,"p":null,"g":0,"n":"Stefán Sigurðsson","b":"10. júní 1859","d":"7. september 1942","pl":"á Þiljuvöllum á Berufjarðarströnd","o":"Bóndi og smiður á Hamri í Hamarsfirði.","br":-1,"k":[1,2,20,88,177,203,282,283,348],"ref":"Ættfaðir","par":"Foreldrar: Sigurður Ásmundsson (f. 20. september 1828 – d. 13. maí 1908) bóndi á Þiljuvöllum og Urðarteigi á Berufjarðarströnd og Kristín Bessadóttir (f. 2. janúar 1828 - d. 13. desember 1902) húsfreyja.","u":[{"l":"maki","n":"Þóra Jónsdóttir","b":"26. október 1859","d":"7. febrúar 1887","pl":null,"nt":null,"o":"Húsfreyja í Borgargarði á Djúpavogi.","pa":"Foreldrar: Jón Jónsson (f. 6. maí 1819 – d. 6. júní 1906) sjómaður og smiður í Borgargarði á Djúpavogi og Anna Jónsdóttir ( f. 18. janúar 1832 – d. 4. apríl 1904 ) húsfreyja."},{"l":"maki","n":"Steinunn Einarsdóttir","b":"22. júlí 1863","d":"26. desember 1935","pl":"í Borgarhöfn í Suðursveit","nt":null,"o":"Húsfreyja á Hamri í Hamarsfirði.","pa":"Foreldrar: Einar Þorsteinsson úr Suðursveit (f. 11. ágúst 1844 – d. 1873?) og Sesselja Steinsdóttir frá Borgarhöfn í Suðursveit (f. 17. nóvember 1834 – d. 10. nóvember 1916)."}]},{"i":1,"p":0,"g":1,"n":"Drengur Stefánsson","b":"5. febrúar 1887","d":null,"pl":null,"o":"","br":0,"k":[],"ref":"1a","note":"andvana","u":[]},{"i":2,"p":0,"g":1,"n":"Stefán Stefánsson","b":"2. janúar 1891","d":"10. maí 1975","pl":"í Borgargarði á Djúpavogi","o":"Bóndi á Hamri í Hamarsfirði og Fagradal í Breiðdal.","br":1,"k":[3,4,5,19],"ref":"1b","u":[{"l":"maki","n":"Jónína Sigurðardóttir","b":"16. febrúar 1891","d":"20. desember 1969","pl":"á Hálsi í Hamarsfirði","nt":null,"o":"Húsfreyja á Hamri og í Fagradal.","pa":"Foreldrar: Sigurður Sigurðsson (f. 1. nóvember 1852 – d. 9. mars 1923) bóndi í Stekkahjáleigu í Búlandshreppi og Vilborg Gísladóttir (f. 6. ágúst 1864 - d. 6. desember 1929) húsfreyja."}]},{"i":3,"p":2,"g":2,"n":"Aðalsteinn Stefánsson","b":"19. mars 1917","d":"25. mars 2001","pl":"á Hamri í Hamarsfirði","o":"Bóndi í Fagradal í Breiðdal.","br":1,"k":[],"ref":"2a","u":[]},{"i":4,"p":2,"g":2,"n":"Ásgeir Stefánsson","b":"4. apríl 1919","d":"28. september 2007","pl":"á Hamri í Hamarsfirði","o":"Bóndi í Fagradal í Breiðdal.","br":1,"k":[],"ref":"2b","u":[]},{"i":5,"p":2,"g":2,"n":"Auður Stefánsdóttir","b":"27. október 1925","d":"7. júlí 2016","pl":"á Hamri í Hamarsfirði","o":"Húsfreyja á Breiðdalsvík.","br":1,"k":[6,7,8],"ref":"2c","u":[{"l":"maki","n":"Birgir Ari Einarsson","b":"11. apríl 1928","d":"29. maí 2016","pl":null,"nt":null,"o":"Kennari og skólastjóri á Breiðdalsvík.","pa":null}]},{"i":6,"p":5,"g":3,"n":"Anna Margrét Birgisdóttir","b":"16. nóvember 1960","d":null,"pl":null,"o":"Kennari og bókasafnsfræðingur á Breiðdalsvík.","br":1,"k":[],"ref":"3a","u":[]},{"i":7,"p":5,"g":3,"n":"Einar Heiðar Birgisson","b":"26. mars 1962","d":null,"pl":null,"o":"Fyrrverandi verkstjóri á Breiðdalsvík, búsettur í Reykjavík.","br":1,"k":[],"ref":"3b","u":[]},{"i":8,"p":5,"g":3,"n":"Jónína Björg Birgisdóttir","b":"17. júní 1966","d":null,"pl":null,"o":"Veitingakona á Breiðdalsvík.","br":1,"k":[9,13,15,18],"ref":"3c","u":[{"l":"barnsfaðir","n":"Jón Hróbjartur Höjgaard Kristinsson","b":"6. desember 1968","d":null,"pl":null,"nt":null,"o":"málarameistari á Egilsstöðum.","pa":null},{"l":"maki","n":"Hermann Meldal Arnþórsson","b":"8. júlí 1966","d":null,"pl":null,"nt":null,"o":"Vinnuvélamaður á Breiðdalsvík.","pa":null}]},{"i":9,"p":8,"g":4,"n":"Birgir Jónsson","b":"15. desember 1984","d":null,"pl":null,"o":"Skólameistari Verkmenntaskóla Austurlands í Neskaupstað, búsettur á Eskifirði.","br":1,"k":[10,11,12],"ref":"4a","u":[{"l":"maki","n":"Jóhanna Rut Stefánsdóttir","b":"30. júní 1986","d":null,"pl":null,"nt":null,"o":"Þroskaþjálfi á Eskifirði.","pa":null}]},{"i":10,"p":9,"g":5,"n":"Gunnhildur Anna Birgisdóttir","b":"6. desember 2009","d":null,"pl":null,"o":"Grunnskólanemi.","br":1,"k":[],"ref":"5a","u":[]},{"i":11,"p":9,"g":5,"n":"Hákon Hrafn Birgisson","b":"8. febrúar 2014","d":null,"pl":null,"o":"Grunnskólanemi.","br":1,"k":[],"ref":"5b","u":[]},{"i":12,"p":9,"g":5,"n":"Stefán Bjartur Birgisson","b":"4. apríl 2019","d":null,"pl":null,"o":"","br":1,"k":[],"ref":"5c","u":[]},{"i":13,"p":8,"g":4,"n":"Aðalheiður Kristín Hermannsdóttir","b":"31. desember 1987","d":null,"pl":null,"o":"Markaðs- , viðskipta- og ferðamálafræðingur í Ástralíu.","br":1,"k":[14],"ref":"4b","u":[{"l":"sambýlismaður","n":"Mitchell Barrie Smith","b":"7. september 1990","d":null,"pl":null,"nt":null,"o":"Fasteignamatsmaður í Ástralíu.","pa":null}]},{"i":14,"p":13,"g":5,"n":"Sonya Amari Smith","b":"9. nóvember 2024","d":null,"pl":null,"o":"","br":1,"k":[],"ref":"5a","u":[]},{"i":15,"p":8,"g":4,"n":"Arnþór Ingi Hermannsson","b":"13. desember 1988","d":null,"pl":null,"o":"Húsasmiður á Breiðdalsvík. - Fyrrum sambýliskona: Karítas Ósk Valgeirsdóttir, hársnyrtir í Neskaupstað, f. 21. janúar 1994.","br":1,"k":[16,17],"ref":"4c","u":[{"l":"single","n":null,"b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":16,"p":15,"g":5,"n":"Hlynur Logi Arnþórsson","b":"18. september 2014","d":null,"pl":null,"o":"Grunnskólanemi.","br":1,"k":[],"ref":"5a","u":[]},{"i":17,"p":15,"g":5,"n":"Auðunn Ari Arnþórsson","b":"9. september 2016","d":null,"pl":null,"o":"Grunnskólanemi.","br":1,"k":[],"ref":"5b","u":[]},{"i":18,"p":8,"g":4,"n":"Auður Hermannsdóttir","b":"5. júní 1993","d":null,"pl":null,"o":"Hóteleigandi, leiðbeinandi við grunnskóla og háskólanemi á Breiðdalsvík.","br":1,"k":[],"ref":"4d","u":[{"l":"sambýlismaður","n":"Pétur Viðarsson","b":"26. júlí 1982","d":null,"pl":null,"nt":null,"o":"Bílaviðgerðarmaður á Breiðdalsvík.","pa":null}]},{"i":19,"p":2,"g":2,"n":"Stefán Stefánsson","b":"19. maí 1930","d":"7. september 2014","pl":"á Hamri í Hamarsfirði","o":"Bóndi í Fagradal í Breiðdal. Aðalsteinn Stefánsson Siggerður Magnúsdóttir","br":1,"k":[],"ref":"2d","u":[]},{"i":20,"p":0,"g":1,"n":"Aðalsteinn Stefánsson","b":"27. júní 1893","d":"18. maí 1921","pl":"í Borgargarði á Djúpavogi","o":"Trésmiður í Reykjavík.","br":2,"k":[21],"ref":"1c","u":[{"l":"maki","n":"Siggerður Magnúsdóttir","b":"12. desember 1895","d":"4. nóvember 1965","pl":null,"nt":null,"o":"Húsfreyja í Reykjavík og á Höfn í Hornafirði.","pa":"Foreldrar: Magnús Kristjánsson (f. 15. nóvember 1862 – d. 17. ágúst 1941) bóndi í Holtaseli á Mýrum og víðar og Ástríður Sigurðardóttir (f. 27. ágúst 1875 – d. 11. september 1953) húsfreyja."}]},{"i":21,"p":20,"g":2,"n":"Aðalsteinn Aðalsteinsson","b":"19. júlí 1920","d":"2. september 1979","pl":null,"o":"Skrifstofumaður á Höfn í Hornafirði.","br":2,"k":[22,33,65,69,79],"ref":"2a","u":[{"l":"maki","n":"Margrét Helga Gísladóttir","b":"3. apríl 1924","d":"28. júní 2009","pl":null,"nt":null,"o":"Talsímakona á Höfn í Hornafirði.","pa":null}]},{"i":22,"p":21,"g":3,"n":"Gísli Eysteinn Aðalsteinsson","b":"5. janúar 1944","d":"24. desember 2020","pl":null,"o":"Byggingaverktaki Höfn í Hornafirði.","br":2,"k":[23,26,28,31],"ref":"3a","u":[{"l":"single","n":null,"b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null},{"l":"maki","n":"Jónína Sesselja Aðalsteinsdóttir","b":"14. júní 1949","d":null,"pl":null,"nt":null,"o":"Húsmóðir á Höfn í Hornafirði.","pa":null}]},{"i":23,"p":22,"g":4,"n":"Ragnheiður Gísladóttir","b":"22. apríl 1966","d":null,"pl":null,"o":"Leikskólakennari í Reykjavík.","br":2,"k":[24,25],"ref":"4a","u":[{"l":"maki","n":"Andreas Jacobsen","b":"2. september 1968","d":null,"pl":null,"nt":null,"o":"Matreiðslumaður í Reykjavík.","pa":null}]},{"i":24,"p":23,"g":5,"n":"Andrea Jacobsen","b":"9. apríl 1998","d":null,"pl":null,"o":"Svíþjóð.","br":2,"k":[],"ref":"5a","u":[]},{"i":25,"p":23,"g":5,"n":"Aníta Jacobsen","b":"16. ágúst 2000","d":null,"pl":null,"o":"Reykjavík.","br":2,"k":[],"ref":"5b","u":[]},{"i":26,"p":22,"g":4,"n":"Aðalsteinn Bjarnþór Gíslason","b":"28. mars 1970","d":null,"pl":null,"o":"Húsasmiður á Höfn í Hornafirði.","br":2,"k":[27],"ref":"4b","u":[{"l":"maki","n":"Hildur Þórisdóttir","b":"1. febrúar 1969","d":null,"pl":null,"nt":null,"o":"Framhaldsskólakennari á Höfn í Hornafirði.","pa":null}]},{"i":27,"p":26,"g":5,"n":"Stígur Aðalsteinsson","b":"2. febrúar 2005","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5a","u":[]},{"i":28,"p":22,"g":4,"n":"Hrafnhildur Gísladóttir","b":"21. nóvember 1971","d":null,"pl":null,"o":"Hárgreiðslukona á Höfn í Hornafirði.","br":2,"k":[29,30],"ref":"4c","u":[{"l":"maki","n":"Helgi Örn Kristinsson","b":"11. apríl 1970","d":null,"pl":null,"nt":null,"o":"Skipstjóri á Höfn í Hornafirði.","pa":null}]},{"i":29,"p":28,"g":5,"n":"Gísli Eysteinn Helgason","b":"25. febrúar 1994","d":null,"pl":null,"o":"Sjómaður á Höfn í Hornafirði.","br":2,"k":[],"ref":"5a","u":[{"l":"maki","n":"Silja Rós Halldórsdóttir","b":"6. maí 1995","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":30,"p":28,"g":5,"n":"Helgi Ernir Helgason","b":"30. júní 1997","d":null,"pl":null,"o":"Höfn í Hornafirði.","br":2,"k":[],"ref":"5b","u":[{"l":"maki","n":"Íris Björk Rabanes","b":"30. júlí 1997","d":null,"pl":null,"nt":null,"o":"Höfn í Hornafirði.","pa":null}]},{"i":31,"p":22,"g":4,"n":"Siggerður Gísladóttir","b":"12. nóvember 1980","d":null,"pl":null,"o":"Tækniteiknari í Reykjavík.","br":2,"k":[32],"ref":"4d","u":[{"l":"maki","n":"Ólafur Helgi Ingason","b":"3. nóvember 1976","d":null,"pl":null,"nt":null,"o":"Vaktstjóri í Reykjavík.","pa":null}]},{"i":32,"p":31,"g":5,"n":"Jón Aðalsteinn Ólafsson","b":"24. júní 2002","d":null,"pl":null,"o":"Reykjavík.","br":2,"k":[],"ref":"5a","u":[]},{"i":33,"p":21,"g":3,"n":"Siggerður Aðalsteinsdóttir","b":"21. nóvember 1948","d":null,"pl":null,"o":"Húsmóðir á Höfn í Hornafirði.","br":2,"k":[34,42,51,60],"ref":"3b","u":[{"l":"maki","n":"Ingólfur Ásgrímsson","b":"7. janúar 1945","d":null,"pl":null,"nt":null,"o":"Skipstjóri á Höfn í Hornafirði.","pa":null}]},{"i":34,"p":33,"g":4,"n":"Ásgrímur Ingólfsson","b":"10. september 1966","d":null,"pl":null,"o":"Skipstjóri á Höfn í Hornafirði.","br":2,"k":[35,38,41],"ref":"4a","u":[{"l":"maki","n":"Þórgunnur Torfadóttir","b":"24. nóvember 1965","d":null,"pl":null,"nt":null,"o":"Skólastjóri á Höfn í Hornafirði.","pa":null}]},{"i":35,"p":34,"g":5,"n":"Sandra Rán Ásgrímsdóttir","b":"3. júní 1990","d":null,"pl":null,"o":"Verkfræðingur hjá Mannvit í Reykjavík.","br":2,"k":[36,37],"ref":"5a","u":[{"l":"maki","n":"Jón Axel Svavarsson","b":"22. mars 1991","d":null,"pl":null,"nt":null,"o":"Reykjavík.","pa":null}]},{"i":36,"p":35,"g":6,"n":"Þórdís Eva Jónsdóttir","b":"19. febrúar 2022","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6a","u":[]},{"i":37,"p":35,"g":6,"n":"Eysteinn Ingi Jónsson","b":"3. júní 2024","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6b","u":[]},{"i":38,"p":34,"g":5,"n":"Iðunn Tara Ásgrímsdóttir","b":"29. júní 1992","d":null,"pl":null,"o":"Lyfjatæknifræðingur í Kópavogi.","br":2,"k":[39,40],"ref":"5b","u":[{"l":"maki","n":"Bergþór Lár Jónsson","b":"15. júní 1987","d":null,"pl":null,"nt":null,"o":"Rafmagnsverkfræðingur í Kópavogi.","pa":null}]},{"i":39,"p":38,"g":6,"n":"Hinrik Lár Bergþórsson","b":"12. september 2018","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6a","u":[]},{"i":40,"p":38,"g":6,"n":"Elísabet Lár Bergþórsdóttir","b":"17. mars 2022","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6b","u":[]},{"i":41,"p":34,"g":5,"n":"Ingólfur Ásgrímsson","b":"23. maí 2000","d":null,"pl":null,"o":"Höfn í Hornafirði.","br":2,"k":[],"ref":"5c","u":[]},{"i":42,"p":33,"g":4,"n":"Margrét Helga Ingólfsdóttir","b":"30. mars 1968","d":null,"pl":null,"o":"Leikskólastjóri á Höfn í Hornafirði.","br":2,"k":[43,47,49],"ref":"4b","u":[{"l":"maki","n":"Jón Birkir Finnsson","b":"10. júlí 1967","d":null,"pl":null,"nt":null,"o":"Bakarameistari á Höfn í Hornafirði.","pa":null}]},{"i":43,"p":42,"g":5,"n":"Sunna Jónsdóttir","b":"20. júní 1991","d":null,"pl":null,"o":"Íþróttafræðingur á Höfn í Hornafirði.","br":2,"k":[44,45,46],"ref":"5a","u":[{"l":"maki","n":"Einar Smári Þorsteinsson","b":"23. mars 1986","d":null,"pl":null,"nt":null,"o":"Sjúkraþjálfari á Höfn í Hornafirði.","pa":null}]},{"i":44,"p":43,"g":6,"n":"Margrét Þöll Einarsdóttir","b":"8. apríl 2016","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6a","u":[]},{"i":45,"p":43,"g":6,"n":"Gylfi Einarsson","b":"11. mars 2018","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6b","u":[]},{"i":46,"p":43,"g":6,"n":"Evert Einarsson","b":"5. febrúar 2023","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6c","u":[]},{"i":47,"p":42,"g":5,"n":"Finnur Ingi Jónsson","b":"23. mars 1994","d":null,"pl":null,"o":"Höfn í Hornafirði.","br":2,"k":[48],"ref":"5b","u":[{"l":"maki","n":"Magdalena Agnieszka Karys","b":"11. mars 1990","d":null,"pl":null,"nt":null,"o":"Höfn í Hornafirði.","pa":null}]},{"i":48,"p":47,"g":6,"n":"Sara Björk Finnsdóttir","b":"13. febrúar 2021","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6a","u":[]},{"i":49,"p":42,"g":5,"n":"Ingólfur Jónsson","b":"11. febrúar 1996","d":null,"pl":null,"o":"Höfn í Hornafirði.","br":2,"k":[50],"ref":"5c","u":[{"l":"maki","n":"Kolbrún Lind Steinarsdóttir","b":"20. apríl 1995","d":null,"pl":null,"nt":null,"o":"Höfn í Hornafirði.","pa":null}]},{"i":50,"p":49,"g":6,"n":"Birna Kristín Ingólfsdóttir","b":"8. október 2021","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6a","u":[]},{"i":51,"p":33,"g":4,"n":"Aðalsteinn Ingólfsson","b":"2. mars 1969","d":null,"pl":null,"o":"Forstjóri á Höfn í Hornafirði.","br":2,"k":[52,56,57,58,59],"ref":"4c","u":[{"l":"maki","n":"Ólöf Þórhalla Magnúsdóttir","b":"8. apríl 1975","d":null,"pl":null,"nt":null,"o":"Húsmóðir á Höfn í Hornafirði.","pa":null}]},{"i":52,"p":51,"g":5,"n":"Siggerður Aðalsteinsdóttir","b":"16. janúar 1995","d":null,"pl":null,"o":"Háskólanemi Höfn í Hornafirði.","br":2,"k":[53,54,55],"ref":"5a","u":[{"l":"maki","n":"Sævar Knútur Hannesson","b":"4. mars 1992","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":53,"p":52,"g":6,"n":"Hilmar Örn Sævarsson","b":"12. september 2019","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6a","u":[]},{"i":54,"p":52,"g":6,"n":"Aðalsteinn Ingi Sævarsson","b":"29. október 2021","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6b","u":[]},{"i":55,"p":52,"g":6,"n":"Alexandra Sævarsdóttir","b":"30. ágúst 2024","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"6c","u":[]},{"i":56,"p":51,"g":5,"n":"Inga Kristín Aðalsteinsdóttir","b":"31. mars 1997","d":null,"pl":null,"o":"Danmörku.","br":2,"k":[],"ref":"5b","u":[{"l":"maki","n":"Mirza Hasecic","b":"25. september 1997","d":null,"pl":null,"nt":null,"o":"Danmörku.","pa":null}]},{"i":57,"p":51,"g":5,"n":"Guðrún Ása Aðalsteinsdóttir","b":"17. apríl 2000","d":null,"pl":null,"o":"Höfn í Hornafirði.","br":2,"k":[],"ref":"5c","u":[]},{"i":58,"p":51,"g":5,"n":"Aníta Aðalsteinsdóttir","b":"19. júlí 2003","d":null,"pl":null,"o":"Höfn í Hornafirði.","br":2,"k":[],"ref":"5d","u":[]},{"i":59,"p":51,"g":5,"n":"Aðalsteinn Aðalsteinsson","b":"30. mars 2006","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5e","u":[]},{"i":60,"p":33,"g":4,"n":"Guðrún Ingólfsdóttir","b":"10. mars 1979","d":null,"pl":null,"o":"Fjármálastjóri hjá Skinney Þinganes á Höfn í Hornafirði.","br":2,"k":[61,62,63,64],"ref":"4d","u":[{"l":"maki","n":"Hjalti Þór Vignisson","b":"24. janúar 1978","d":null,"pl":null,"nt":null,"o":"Framkvæmdastjóri sölu og þróunar hjá Skinney Þinganes á Höfn í Hornafirði.","pa":null}]},{"i":61,"p":60,"g":5,"n":"Salvör Dalla Hjaltadóttir","b":"9. maí 2003","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5a","u":[]},{"i":62,"p":60,"g":5,"n":"Siggerður Erla Hjaltadóttir","b":"29. mars 2005","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5b","u":[]},{"i":63,"p":60,"g":5,"n":"Kári Hjaltason","b":"25. maí 2007","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5c","u":[]},{"i":64,"p":60,"g":5,"n":"Katla Hjaltadóttir","b":"18. febrúar 2014","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5d","u":[]},{"i":65,"p":21,"g":3,"n":"Aðalsteinn Aðalsteinsson","b":"25. nóvember 1955","d":null,"pl":null,"o":"Skrifstofumaður á Höfn í Hornafirði.","br":2,"k":[66],"ref":"3c","u":[{"l":"maki","n":"Elísabet Þorgerður Einarsdóttir","b":"27. maí 1957","d":null,"pl":null,"nt":null,"o":"Sjúkraliði á Höfn í Hornafirði.","pa":null}]},{"i":66,"p":65,"g":4,"n":"Lilja Rós Aðalsteinsdóttir","b":"24. júlí 1982","d":null,"pl":null,"o":"Skrifstofumaður á Höfn í Hornafirði.","br":2,"k":[67,68],"ref":"4a","u":[{"l":"single","n":null,"b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null},{"l":"maki","n":"Óskar Stefánsson","b":"1. nóvember 1983","d":null,"pl":null,"nt":null,"o":"Sjómaður á Höfn í Hornafirði.","pa":null}]},{"i":67,"p":66,"g":5,"n":"Aðalsteinn Ómar Liljuson","b":"28. nóvember 2009","d":null,"pl":null,"o":"Grunnskólanemi.","br":2,"k":[],"ref":"5a","u":[]},{"i":68,"p":66,"g":5,"n":"Anna Margrét Óskarsdóttir","b":"2. janúar 2014","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5b","u":[]},{"i":69,"p":21,"g":3,"n":"Árni Guðjón Aðalsteinsson","b":"9. ágúst 1959","d":null,"pl":null,"o":"Framkvæmdastjóri í Ólafsvík.","br":2,"k":[70,73,76],"ref":"3d","u":[{"l":"maki","n":"Matthildur Kristmundsdóttir","b":"9. júlí 1962","d":null,"pl":null,"nt":null,"o":"Starfsmaður á dvalarheimili fyrir aldraða í Ólafsvík.","pa":null}]},{"i":70,"p":69,"g":4,"n":"Laufey Helga Árnadóttir","b":"17. september 1980","d":null,"pl":null,"o":"Viðskiptafræðingur í Ólafsvík.","br":2,"k":[71,72],"ref":"4a","u":[{"l":"maki","n":"Gunnar Helgi Baldursson","b":"10. september 1976","d":null,"pl":null,"nt":null,"o":"Vélstjóri í Ólafsvík.","pa":null}]},{"i":71,"p":70,"g":5,"n":"Matthías Daði Gunnarsson","b":"31. mars 2006","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5a","u":[]},{"i":72,"p":70,"g":5,"n":"Bríet Sunna Gunnarsdóttir","b":"16. júlí 2008","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5b","u":[]},{"i":73,"p":69,"g":4,"n":"Hrafnhildur Arna Árnadóttir","b":"13. október 1984","d":null,"pl":null,"o":"Húsmóðir í Ólafsvík.","br":2,"k":[74,75],"ref":"4b","u":[{"l":"maki","n":"Atli Már Gunnarsson","b":"26. febrúar 1980","d":null,"pl":null,"nt":null,"o":"Vélstjóri í Ólafsvík.","pa":null}]},{"i":74,"p":73,"g":5,"n":"Kristófer Máni Atlason","b":"13. desember 2004","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5a","u":[]},{"i":75,"p":73,"g":5,"n":"Erik Örn Atlason","b":"11. nóvember 2007","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5b","u":[]},{"i":76,"p":69,"g":4,"n":"Margrét Eir Árnadóttir","b":"16. janúar 1994","d":null,"pl":null,"o":"Snyrtifræðingur í Ólafsvík.","br":2,"k":[77,78],"ref":"4c","u":[{"l":"maki","n":"Höskuldur Árnason","b":"1. desember 1990","d":null,"pl":null,"nt":null,"o":"Ólafsvík.","pa":null}]},{"i":77,"p":76,"g":5,"n":"Írena Mjöll Höskuldsdóttir","b":"12. febrúar 2021","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5a","u":[]},{"i":78,"p":76,"g":5,"n":"Aron Nökkvi Höskuldsson","b":"29. júní 2024","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5b","u":[]},{"i":79,"p":21,"g":3,"n":"Ingi Már Aðalsteinsson","b":"9. desember 1960","d":null,"pl":null,"o":"Fjármálastjóri í Mosfellsbæ.","br":2,"k":[80,83,85],"ref":"3e","u":[{"l":"barnsmóðir","n":"Guðrún Arnarsdóttir, Reykjavík","b":"30. maí 1963","d":null,"pl":null,"nt":null,"o":"","pa":null},{"l":"maki","n":"Kristrún Kjartansdóttir","b":"22. júlí 1959","d":null,"pl":null,"nt":null,"o":"Ljósmóðir í Mosfellsbæ.","pa":null}]},{"i":80,"p":79,"g":4,"n":"Arnar Már Ingason","b":"14. nóvember 1982","d":null,"pl":null,"o":"Búsettur í Reykjavík. - Fyrrum sambýliskona: Sigríður María Sigmarsdóttir, sjúkraliði í Reykjavík, f. 13. maí 1986.","br":2,"k":[81,82],"ref":"4a","u":[{"l":"single","n":null,"b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":81,"p":80,"g":5,"n":"Sara Mist Arnarsdóttir","b":"24. desember 2011","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5a","u":[]},{"i":82,"p":80,"g":5,"n":"Sindri Már Arnarsson","b":"12. nóvember 2013","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5b","u":[]},{"i":83,"p":79,"g":4,"n":"Aron Sölvi Ingason","b":"29. júní 1988","d":null,"pl":null,"o":"Mosfellsbæ.","br":2,"k":[84],"ref":"4b","u":[{"l":"barnsmóðir","n":"María Arnarsdóttir, Reykjavík","b":"20. september 1993","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":84,"p":83,"g":5,"n":"Íris Anna Aronsdóttir","b":"10. maí 2014","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5a","u":[]},{"i":85,"p":79,"g":4,"n":"Andri Már Ingason","b":"18. október 1990","d":null,"pl":null,"o":"Sandgerði.","br":2,"k":[86,87],"ref":"4c","u":[{"l":"maki","n":"Perla Benediktsdóttir","b":"1. ágúst 1987","d":null,"pl":null,"nt":null,"o":"Sandgerði.","pa":null}]},{"i":86,"p":85,"g":5,"n":"Sóldís Anja Andradóttir","b":"13. október 2016","d":null,"pl":null,"o":"","br":2,"k":[],"ref":"5a","u":[]},{"i":87,"p":85,"g":5,"n":"Jökull Logi Andrason","b":"6. janúar 2019","d":null,"pl":null,"o":"Þóra Stefánsdóttir Ólafur Þórlindsson","br":2,"k":[],"ref":"5b","u":[]},{"i":88,"p":0,"g":1,"n":"Þóra Stefánsdóttir","b":"4. júlí 1895","d":"6. ágúst 1973","pl":"á Hamri í Hamarsfirði","o":"Húsfreyja á Hamri í Hamarsfirði.","br":3,"k":[89,90,114,144,170],"ref":"1d","u":[{"l":"maki","n":"Ólafur Þórlindsson","b":"15. mars 1891","d":"16. ágúst 1971","pl":"í Víðinesi í Berufirði","nt":null,"o":"Bóndi á Hamri í Hamarsfirði.","pa":"Foreldrar: Þórlindur Sigurðsson (f. 25. nóvember 1849 – d. 22. apríl 1912) bóndi í Gautavík á Berufjarðarströnd og í Hamarsseli í Hamarsfirði og Ingunn Björnsdóttir (f. 15. september 1848 – d. 5. maí 1912) húsfreyja."}]},{"i":89,"p":88,"g":2,"n":"Stefán Steinar Ólafsson","b":"24. október 1920","d":"2. desember 1960","pl":"á Hamri í Hamarsfirði","o":"Hamri í Hamarsfirði.","br":3,"k":[],"ref":"2a","u":[]},{"i":90,"p":88,"g":2,"n":"Jón Ólafsson","b":"28. febrúar 1923","d":"5. nóvember 2002","pl":"á Hamri í Hamarsfirði","o":"Íþróttakennari og lögreglumaður á Eskifirði.","br":3,"k":[91,100,106,109],"ref":"2b","u":[{"l":"maki","n":"Guðrún Valdís Ármann","b":"11. júní 1926","d":"23. júní 2019","pl":"á Skorrastað í Norðfirði","nt":null,"o":"Húsfreyja, verkamaður og kennari á Eskifirði.","pa":null}]},{"i":91,"p":90,"g":3,"n":"Guðjón Ármann Jónsson","b":"6. desember 1948","d":null,"pl":"á Skorrastað í Norðfirði. Lögfræðingur í Reykjavík","o":"","br":3,"k":[92,96],"ref":"3a","u":[{"l":"maki","n":"Herborg Jónasdóttir","b":"7. júlí 1948","d":"17. febrúar 2004","pl":"í Hátúni á Norðfirði","nt":null,"o":"Skrifstofumaður.","pa":null},{"l":"maki","n":"Guðný Harðardóttir","b":"11. júní 1951","d":null,"pl":null,"nt":null,"o":"Framkvæmdastjóri í Reykjavík.","pa":null}]},{"i":92,"p":91,"g":4,"n":"Jónas Eysteinn Guðjónsson","b":"31. janúar 1967","d":null,"pl":null,"o":"Viðskiptafræðingur, búsettur í Bandaríkjunum.","br":3,"k":[93,94,95],"ref":"4a","u":[{"l":"maki","n":"Berglind Gestsdóttir","b":"12. ágúst 1966","d":null,"pl":null,"nt":null,"o":"Hjúkrunarfræðingur í Reykjavík.","pa":null},{"l":"maki","n":"Leianne Clements","b":"4. júní 1968","d":null,"pl":null,"nt":null,"o":"Hagfræðingur í Bandaríkjunum.","pa":null}]},{"i":93,"p":92,"g":5,"n":"Arnór Ármann Jónasson","b":"25. apríl 1987","d":null,"pl":null,"o":"Hljómlistarmaður og stuðningsfulltrúi í Reykjavík.","br":3,"k":[],"ref":"5a","u":[{"l":"maki","n":"(sambýliskona) Elísa Hildur Einarsdóttir","b":"2. mars 1990","d":null,"pl":null,"nt":null,"o":"Listakona í Reykjavík.","pa":null}]},{"i":94,"p":92,"g":5,"n":"Chloe Herborg Jónasdóttir","b":"14. október 2006","d":null,"pl":null,"o":"Nemi.","br":3,"k":[],"ref":"5b","u":[]},{"i":95,"p":92,"g":5,"n":"Nói Leonard Jónasson","b":"14. október 2006","d":null,"pl":null,"o":"Nemi.","br":3,"k":[],"ref":"5c","u":[]},{"i":96,"p":91,"g":4,"n":"Jón Ármann Guðjónsson","b":"6. apríl 1968","d":null,"pl":null,"o":"Lögfræðingur í Reykjavík.","br":3,"k":[97,98,99],"ref":"4b","u":[{"l":"maki","n":"Edda Björk Sigurðardóttir","b":"9. janúar 1969","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":97,"p":96,"g":5,"n":"Guðjón Andri Jónsson","b":"5. febrúar 1996","d":null,"pl":null,"o":"Lögfræðingur í Reykjavík.","br":3,"k":[],"ref":"5a","u":[{"l":"maki","n":"(sambýliskona) Arna Eir Gunnarsdóttir","b":"1. febrúar 1996","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":98,"p":96,"g":5,"n":"Hildur Sigrún Jónsdóttir","b":"31. ágúst 1999","d":null,"pl":null,"o":"Íþróttafræðingur í Reykjavík.","br":3,"k":[],"ref":"5b","u":[]},{"i":99,"p":96,"g":5,"n":"Sigurður Bjarki Jónsson","b":"15. ágúst 2004","d":null,"pl":null,"o":"Menntaskólanemi í Reykjavík.","br":3,"k":[],"ref":"5c","u":[]},{"i":100,"p":90,"g":3,"n":"Ólafur Jónsson","b":"7. febrúar 1952","d":null,"pl":"á Skorrastað í Norðfirði. Fyrrverandi kennari í Reykjavík. - Barnsmóðir Anna Baldvina Jóhannesdóttir frá Dalvík, f. 14. mars 1949","o":"","br":3,"k":[101,103,105],"ref":"3b","u":[{"l":"single","n":null,"b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null},{"l":"maki","n":"Jónína Ragnarsdóttir","b":"13. apríl 1953","d":null,"pl":null,"nt":null,"o":"Fyrrverandi kennari í Reykjavík.","pa":null}]},{"i":101,"p":100,"g":4,"n":"Kristján Már Ólafsson","b":"15. júní 1973","d":null,"pl":null,"o":"Sérvitringur í Þýskalandi.","br":3,"k":[102],"ref":"4a","u":[{"l":"maki","n":"Ana Caroline de Campos Braz","b":"10. júlí 1981","d":null,"pl":null,"nt":"skilin","o":"Grafískur hönnuður.","pa":null}]},{"i":102,"p":101,"g":5,"n":"Sunna Kristjánsdóttir","b":"15. júlí 2014","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":103,"p":100,"g":4,"n":"Jónína Herdís Ólafsdóttir","b":"20. maí 1986","d":null,"pl":null,"o":"Líffræðingur í Reykjavík.","br":3,"k":[104],"ref":"4b","u":[{"l":"maki","n":"Jóhann Garðar Þorbjörnsson","b":"4. desember 1988","d":null,"pl":null,"nt":null,"o":"Líffræðingur í Reykjavík.","pa":null}]},{"i":104,"p":103,"g":5,"n":"Heiðar Bliki Jóhnnsson","b":"14. mars 2024","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":105,"p":100,"g":4,"n":"Stefán Steinar Ólafsson","b":"21. október 1987","d":null,"pl":null,"o":"Íþrótta- og heilsufræðingur í Reykjavík.","br":3,"k":[],"ref":"4c","u":[]},{"i":106,"p":90,"g":3,"n":"Árni Þórður Jónsson","b":"19. apríl 1956","d":null,"pl":"á Seyðisfirði. Fyrrverandi fréttamaður og ráðgjafi í Reykjavík","o":"","br":3,"k":[107,108],"ref":"3c","u":[{"l":"maki","n":"Hallfríður María Pálsdóttir","b":"24. janúar 1956","d":null,"pl":null,"nt":null,"o":"Homeopati og „skottulæknir“ í Reykjavík.","pa":null},{"l":"maki","n":"Guðjón Karl Arnarson","b":"9. september 1979","d":null,"pl":null,"nt":null,"o":"Tölvunarfræðingur.","pa":null}]},{"i":107,"p":106,"g":4,"n":"Urður Dís Árnadóttir","b":"12. febrúar 1991","d":null,"pl":null,"o":"Vindorkuverkfræðingur í Danmörku.","br":3,"k":[],"ref":"4a","u":[{"l":"maki","n":"(sambýlismaður) Daniel Ryan Austin","b":"4. febrúar 1992","d":null,"pl":null,"nt":null,"o":"Háspennurafmagnsverkfræðingur í Danmörku.","pa":null}]},{"i":108,"p":106,"g":4,"n":"Ylfa Dögg Árnadóttir","b":"17. maí 1994","d":null,"pl":null,"o":"Meistaranemi í klínískri sálfræði í Reykjavík.","br":3,"k":[],"ref":"4b","u":[{"l":"maki","n":"(sambýlismaður) Orri Ómarsson","b":"29. mars 1993","d":null,"pl":null,"nt":null,"o":"Rafmagnsverkfræðingur í Reykjavík.","pa":null}]},{"i":109,"p":90,"g":3,"n":"Þóra Sólveig Jónsdóttir","b":"22. ágúst 1961","d":null,"pl":"á Hamri í Hamarsfirði. Búfræðingur frá Hólum og viðskiptafræðingur frá Bifröst. Skógar- og rollubóndi á Borg í Skriðdal. - Barnsfaðir: Bergur Jónsson frá Ketilsstöðum á Völlum, f. 17. október 1960","o":"","br":3,"k":[110],"ref":"3d","u":[{"l":"single","n":null,"b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":110,"p":109,"g":4,"n":"Jón Matthías Bergsson","b":"18. júní 1980","d":null,"pl":null,"o":"Lögfræðingur í Reykjavík.","br":3,"k":[111,112,113],"ref":"4a","u":[{"l":"maki","n":"Jóhanna Lúvísa Reynisdóttir","b":"7. ágúst 1978","d":null,"pl":null,"nt":"skilin","o":"Náms- og starfsráðgjafi í Reykjavík.","pa":null}]},{"i":111,"p":110,"g":5,"n":"Katrín Þóra Jónsdóttir","b":"1. apríl 2006","d":null,"pl":null,"o":"Framhaldsskólanemi.","br":3,"k":[],"ref":"5a","u":[]},{"i":112,"p":110,"g":5,"n":"Markús Thor Jónsson","b":"7. september 2010","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5b","u":[]},{"i":113,"p":110,"g":5,"n":"Valdís Lilja Jónsdóttir","b":"28. apríl 2012","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5c","u":[]},{"i":114,"p":88,"g":2,"n":"Ingibjörg Ólafsdóttir","b":"10. desember 1925","d":"6. júlí 2013","pl":"á Hamri í Hamarsfirði","o":"Húsfreyja á Bragðavöllum í Hamarsfirði og Djúpavogi.","br":3,"k":[115,135],"ref":"2c","u":[{"l":"maki","n":"Jón Björnsson","b":"3. maí 1920","d":"19. október 1991","pl":null,"nt":null,"o":"Bóndi á Bragðavöllum í Hamarsfirði.","pa":null}]},{"i":115,"p":114,"g":3,"n":"Þórunnborg Jónsdóttir","b":"9. febrúar 1951","d":null,"pl":null,"o":"Fyrrverandi kennari á Djúpavogi, búsett á Bragðavöllum í Hamarsfirði.","br":3,"k":[116,118,124,130],"ref":"3a","u":[{"l":"maki","n":"Ragnar Eiðsson","b":"26. nóvember 1945","d":null,"pl":null,"nt":null,"o":"Bóndi á Bragðavöllum.","pa":null}]},{"i":116,"p":115,"g":4,"n":"Jón Ragnarsson","b":"11. október 1969","d":null,"pl":null,"o":"Forritari í Bergen, Noregi.","br":3,"k":[117],"ref":"4a","u":[{"l":"maki","n":"Hulda Helgadóttir","b":"25. febrúar 1970","d":null,"pl":null,"nt":"skilin","o":"Stjórnmálafræðingur í Reykjavík.","pa":null},{"l":"maki","n":"Melri Silva Tinto","b":"23. apríl 1968","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":117,"p":116,"g":5,"n":"Júlía Rós Jónsdóttir","b":"23. september 2003","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":118,"p":115,"g":4,"n":"Eiður Ragnarsson","b":"26. febrúar 1972","d":null,"pl":null,"o":"Ferðaþjónustubóndi á Djúpavogi.","br":3,"k":[119,121],"ref":"4b","u":[{"l":"maki","n":"Steinunn Þórarinsdóttir","b":"27. desember 1970","d":null,"pl":null,"nt":null,"o":"Stuðningsfulltrúi á Djúpavogi.","pa":null},{"l":"maki","n":"Karolina Bielecka","b":"7. júlí 1992","d":null,"pl":null,"nt":null,"o":"Næringarfræðingur á Djúpavogi.","pa":null}]},{"i":119,"p":118,"g":5,"n":"Alma Eiðsdóttir","b":"20. júlí 1993","d":null,"pl":null,"o":"Hársnyrtir á Reyðarfirði.","br":3,"k":[120],"ref":"5a","u":[{"l":"maki","n":"(sambýlismaður) Ármann Egill Hjörleifsson","b":"10. mars. 1994","d":null,"pl":null,"nt":null,"o":"Starfsmaður hjá Eimskip á Reyðarfirði.","pa":null}]},{"i":120,"p":119,"g":6,"n":"Eiður Leví Ármannsson","b":"25. mars 2016","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"6a","u":[]},{"i":121,"p":118,"g":5,"n":"Bergey Eiðsdóttir","b":"12. maí 1998","d":null,"pl":null,"o":"Leikskólastarfsmaður á Djúpavogi.","br":3,"k":[122,123],"ref":"5b","u":[{"l":"maki","n":"Alexander Ingi Jónsson","b":"30. september 1993","d":null,"pl":null,"nt":"skilin","o":"Starfsmaður Gámaþjónustunnar á Reyðarfirði.","pa":null}]},{"i":122,"p":121,"g":6,"n":"Fannar Máni Alexandersson","b":"23. júlí 2019","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"6a","u":[]},{"i":123,"p":121,"g":6,"n":"Ragney Jara Alexandersdóttir","b":"25. mars 2021","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"6b","u":[]},{"i":124,"p":115,"g":4,"n":"Ingi Ragnarsson","b":"11. maí 1978","d":null,"pl":null,"o":"Ferðaþjónustubóndi á Djúpavogi.","br":3,"k":[125,126,127,128,129],"ref":"4c","u":[{"l":"maki","n":"Fanney Jóna Gísladóttir","b":"14. október 1982","d":null,"pl":null,"nt":"skilin","o":"","pa":null},{"l":"maki","n":"Jóhanna Sigurlín Reykjalín Ragnarsdóttir","b":"11. maí 1985","d":null,"pl":null,"nt":null,"o":"Uppeldis- og menntunarfræðingur við Djúpavogsskóla.","pa":null}]},{"i":125,"p":124,"g":5,"n":"Ragnar Björn Ingason","b":"13. september 2003","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":126,"p":124,"g":5,"n":"Gísli Valgeir Ingason","b":"26. júlí 2005","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5b","u":[]},{"i":127,"p":124,"g":5,"n":"Ingibjörg Rán Ingadóttir","b":"16. júní 2013","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5c","u":[]},{"i":128,"p":124,"g":5,"n":"Trausti Brimar Ingason","b":"27. apríl 2019","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5d","u":[]},{"i":129,"p":124,"g":5,"n":"Margrét Þórunnborg Ingadóttir","b":"18. desember 2021","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5e","u":[]},{"i":130,"p":115,"g":4,"n":"Óskar Ragnarsson","b":"28. desember 1981","d":null,"pl":null,"o":"Stöðvarstjóri hjá Fiskeldi Austfjarða á Djúpavogi.","br":3,"k":[131,132,133,134],"ref":"4d","u":[{"l":"barnsmóðir","n":"Snædís Guðjónsdóttir, Grindavík","b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null},{"l":"maki","n":"(sambýliskona) Hildur Björk Þorsteinsdóttir","b":"25. september 1982","d":null,"pl":null,"nt":null,"o":"Grafískur hönnuður á Djúpavogi.","pa":null}]},{"i":131,"p":130,"g":5,"n":"Selma Líf Óskarsdóttir","b":"17. ágúst 2006","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[],"corr":"Leiðrétting frá Óskari Ragnarssyni, ágúst 2026. Ritið tilgreinir 18. ágúst á báðum stöðum (bls. með færslu 5a og í barnalista föður)."},{"i":132,"p":130,"g":5,"n":"Berglind Ylfa Óskarsdóttir","b":"1. ágúst 2009","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5b","u":[]},{"i":133,"p":130,"g":5,"n":"Þórhallur Óskarsson","b":"27. apríl 2012","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5c","u":[]},{"i":134,"p":130,"g":5,"n":"Sóley Óskarsdóttir","b":"15. janúar 2019","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5d","u":[]},{"i":135,"p":114,"g":3,"n":"Steinunn Jónsdóttir","b":"21. júní 1955","d":null,"pl":null,"o":"Djúpavogi.","br":3,"k":[136,141],"ref":"3b","u":[{"l":"maki","n":"Jón Friðrik Sigurðsson","b":"4. desember 1953","d":null,"pl":null,"nt":null,"o":"Sjómaður á Djúpavogi.","pa":null}]},{"i":136,"p":135,"g":4,"n":"Sigurður Ágúst Jónsson","b":"13. júní 1974","d":null,"pl":null,"o":"Stýrimaður á Djúpavogi.","br":3,"k":[137,138,139,140],"ref":"4a","u":[{"l":"maki","n":"Hafdís Reynisdóttir","b":"23. febrúar 1979","d":null,"pl":null,"nt":null,"o":"Húsmóðir á Djúpavogi.","pa":null}]},{"i":137,"p":136,"g":5,"n":"Davíð Örn Sigurðarson","b":"27. apríl 2001","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":138,"p":136,"g":5,"n":"Viktor Ingi Sigurðarson","b":"26. mars 2005","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5b","u":[]},{"i":139,"p":136,"g":5,"n":"Sævar Atli Sigurðarson","b":"3. júní 2008","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5c","u":[]},{"i":140,"p":136,"g":5,"n":"Andri Jón Sigurðarson","b":"7. september 2017","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5d","u":[]},{"i":141,"p":135,"g":4,"n":"Særún Björg Jónsdóttir","b":"1. ágúst 1979","d":null,"pl":null,"o":"Afgreiðslumaður í Hafnarfirði.","br":3,"k":[142,143],"ref":"4b","u":[{"l":"single","n":null,"b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null},{"l":"maki","n":"Þorgeir Valur Ellertsson","b":"27. september 1979","d":null,"pl":null,"nt":null,"o":"Prentari í Hafnarfirði.","pa":null}]},{"i":142,"p":141,"g":5,"n":"Ómar Freyr Særúnarson","b":"26. desember 2001","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":143,"p":141,"g":5,"n":"Sigurður Ýmir Þorgeirsson","b":"28. júní 2011","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5b","u":[]},{"i":144,"p":88,"g":2,"n":"Hrefna Ólafsdóttir","b":"12. febrúar 1928","d":"9. apríl 2001","pl":"á Hamri í Hamarsfirði","o":"Húsfreyja í Ytri-Fagradal á Skarðsströnd.","br":3,"k":[145,154,158,164],"ref":"2d","u":[{"l":"maki","n":"Steinólfur Lárusson","b":"26. júní 1928","d":"15. júlí 2012","pl":null,"nt":null,"o":"Bóndi í Ytri-Fagradal á Skarðsströnd.","pa":null}]},{"i":145,"p":144,"g":3,"n":"Ólöf Þóra Steinólfsdóttir","b":"6. nóvember 1954","d":null,"pl":null,"o":"Húsmóðir í Reykjavík.","br":3,"k":[146,149,152],"ref":"3a","u":[{"l":"barnsfaðir","n":"Marteinn Jónsson","b":"27. júlí 1952","d":null,"pl":null,"nt":null,"o":"verkamaður í Kópavogi.","pa":null},{"l":"maki","n":"Pétur Björgvin Stefánsson","b":"16. desember 1954","d":null,"pl":null,"nt":null,"o":"Verkamaður í Reykjavík.","pa":null}]},{"i":146,"p":145,"g":4,"n":"Jónína Marteinsdóttir","b":"11. apríl 1974","d":"13. nóvember 2015","pl":null,"o":"Húsmóðir í Reykjavík.","br":3,"k":[147,148],"ref":"4a","u":[{"l":"barnsfaðir","n":"Máni Svansson","b":"19. júní 1961","d":null,"pl":null,"nt":null,"o":"verkamaður í Reykjavík.","pa":null},{"l":"maki","n":"Sigurður Eggert Axelsson","b":"7. júlí 1967","d":null,"pl":null,"nt":null,"o":"Verkamaður í Reykjavík.","pa":null}]},{"i":147,"p":146,"g":5,"n":"Daði Mánason","b":"1. ágúst 1992","d":null,"pl":null,"o":"Stuðningsfulltrúi á sambýli í Reykjavík.","br":3,"k":[],"ref":"5a","u":[]},{"i":148,"p":146,"g":5,"n":"Gabríel Sigurðsson","b":"16. október 1998","d":null,"pl":null,"o":"Verkamaður í Reykjavík.","br":3,"k":[],"ref":"5b","u":[]},{"i":149,"p":145,"g":4,"n":"Stefán Sölvi Pétursson","b":"20. mars 1986","d":null,"pl":null,"o":"Öryggisvörður í Reykjavík.","br":3,"k":[150,151],"ref":"4b","u":[{"l":"maki","n":"Vera Óðinsdóttir","b":"12. október 1994","d":null,"pl":null,"nt":null,"o":"Starfsmaður á Hagstofu Íslands. Reykjavík.","pa":null}]},{"i":150,"p":149,"g":5,"n":"Pétur Darri Stefánsson","b":"11. september 2015","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":151,"p":149,"g":5,"n":"Erika Myrra Stefánsdóttir","b":"8. desember 2017","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5b","u":[]},{"i":152,"p":145,"g":4,"n":"Úlfur Orri Pétursson","b":"24. apríl 1987","d":null,"pl":null,"o":"Rafvirki í Reykjavík.","br":3,"k":[153],"ref":"4c","u":[{"l":"maki","n":"Linda María Viktoría Karlsdóttir","b":"24. október 1988","d":null,"pl":null,"nt":"skilin","o":"","pa":null}]},{"i":153,"p":152,"g":5,"n":"Alma Þóra Úlfsdóttir","b":"31. maí 2017","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":154,"p":144,"g":3,"n":"Sesselja Steinólfsdóttir","b":"27. janúar 1959","d":null,"pl":null,"o":"Búfræðingur og verkakona á Höfn í Hornafirði.","br":3,"k":[155],"ref":"3b","u":[{"l":"maki","n":"Jón Haukur Hauksson","b":"11. ágúst 1956","d":null,"pl":null,"nt":null,"o":"Sjómaður á Höfn í Hornafirði.","pa":null}]},{"i":155,"p":154,"g":4,"n":"Bergþór Lár Jónsson","b":"15. júlí 1987","d":null,"pl":null,"o":"Rafmagnsverkfræðingur í Kópavogi.","br":3,"k":[156,157],"ref":"4a","u":[{"l":"maki","n":"Iðunn Tara Ásgrímsdóttir","b":"29. júní 1992","d":null,"pl":null,"nt":null,"o":"Lyfjatæknifræðingur í Kópavogi.","pa":null}]},{"i":156,"p":155,"g":5,"n":"Hinrik Lár Bergþórsson","b":"12. september 2018","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":157,"p":155,"g":5,"n":"Elísabet Lár Bergþórsdóttir","b":"17. mars 2022","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5b","u":[]},{"i":158,"p":144,"g":3,"n":"Halla Sigríður Steinólfsdóttir","b":"11. maí 1964","d":null,"pl":null,"o":"Bóndi í Ytri-Fagradal á Skarðsströnd.","br":3,"k":[159,162,163],"ref":"3c","u":[{"l":"barnsfaðir","n":"Jónas Benediktsson","b":"18. ágúst 1953","d":null,"pl":null,"nt":null,"o":"smiður á Fáskrúðsfirði.","pa":null},{"l":"maki","n":"Guðmundur Kristján Gíslason","b":"7. september 1967","d":null,"pl":null,"nt":null,"o":"Bóndi í Ytri-Fagradal á Skarðsströnd.","pa":null}]},{"i":159,"p":158,"g":4,"n":"Steinólfur Jónasson","b":"15. nóvember 1981","d":null,"pl":null,"o":"Íþróttakennari og sjómaður á Akranesi.","br":3,"k":[160,161],"ref":"4a","u":[{"l":"maki","n":"Brynja Vattar Baldursdóttir","b":"2. maí 1983","d":null,"pl":null,"nt":null,"o":"Leikskólakennari á Akranesi.","pa":null}]},{"i":160,"p":159,"g":5,"n":"Mía Vattar Steinólfsdóttir","b":"8. ágúst 2013","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":161,"p":159,"g":5,"n":"Nói Vattar Steinólfsson","b":"23. júlí 2019","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5b","u":[]},{"i":162,"p":158,"g":4,"n":"Gísli Rúnar Guðmundsson","b":"20. maí 1989","d":null,"pl":null,"o":"Umsjónarmaður íþróttahúss á Breiðdalsvík.","br":3,"k":[],"ref":"4b","u":[{"l":"maki","n":"(sambýliskona) Sandra Natalia Gunnsteinsdóttir","b":"4. nóvember 1993","d":null,"pl":null,"nt":null,"o":"Félagsráðgjafi á Breiðdalsvík.","pa":null}]},{"i":163,"p":158,"g":4,"n":"Hrefna Frigg Guðmundsdóttir","b":"23. september 1991","d":null,"pl":null,"o":"Sjúkraliði í Hafnarfirði.","br":3,"k":[],"ref":"4c","u":[{"l":"maki","n":"Þórarinn Magnússon","b":"31. mars 1989","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":164,"p":144,"g":3,"n":"Stefán Skafti Steinólfsson","b":"26. apríl 1967","d":null,"pl":null,"o":"Vélvirki á Akranesi.","br":3,"k":[165,168],"ref":"3d","u":[{"l":"maki","n":"Linda Sæmundsdóttir","b":"23. janúar 1967","d":null,"pl":null,"nt":null,"o":"Verkakona í Reykjavík.","pa":null},{"l":"maki","n":"Þórey Helgadóttir","b":"3. maí 1962","d":null,"pl":null,"nt":"skilin","o":"Húsmóðir á Akranesi.","pa":null}]},{"i":165,"p":164,"g":4,"n":"Hallgrímur Pálmi Skaftason","b":"24. janúar 1987","d":null,"pl":null,"o":"Pípulagningamaður í Mosfellsbæ.","br":3,"k":[166,167],"ref":"4a","u":[{"l":"maki","n":"Helena Smáradóttir","b":"3. október 1987","d":null,"pl":null,"nt":null,"o":"Sölufulltrúi í Mosfellsbæ.","pa":null}]},{"i":166,"p":165,"g":5,"n":"Hrafntinna Hallgrímsdóttir","b":"16. maí 2014","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":167,"p":165,"g":5,"n":"Freysteinn Hallgrímsson","b":"15. júlí 2017","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5b","u":[]},{"i":168,"p":164,"g":4,"n":"Jófríður Ísdís Skaftadóttir","b":"12. febrúar 1998","d":null,"pl":null,"o":"Starfsmaður Norðuráls og háskólanemi í Reykjavík.","br":3,"k":[169],"ref":"4b","u":[{"l":"maki","n":"(sambýlismaður) Dagur Bollason","b":"21. nóvember 1991","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":169,"p":168,"g":5,"n":"Bragi Hrafn Dagsson","b":"29. janúar 2025","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":170,"p":88,"g":2,"n":"Örn Ólafsson","b":"13. nóvember 1932","d":"28. september 2005","pl":"á Hamri í Hamarsfirði","o":"Bóndi á Hamri í Hamarsfirði, seinna búsettur í Reykjavík.","br":3,"k":[171],"ref":"2e","u":[{"l":"maki","n":"Traudel Röhrl","b":"4. febrúar 1943","d":null,"pl":null,"nt":null,"o":"Býr í Rosenheim í Þýskalandi.","pa":null}]},{"i":171,"p":170,"g":3,"n":"Alexandra Sólveig Arnardóttir","b":"9. júní 1966","d":null,"pl":null,"o":"Hótelstarfsmaður á Selfossi.","br":3,"k":[172,175,176],"ref":"3a","u":[{"l":"maki","n":"Unnsteinn Guðmundsson","b":"28. júní 1966","d":null,"pl":null,"nt":"skilin","o":"Vélstjóri í Grundarfirði.","pa":null}]},{"i":172,"p":171,"g":4,"n":"Örn Ingi Unnsteinsson","b":"6. maí 1989","d":null,"pl":null,"o":"Nemi í djasstónlist í Danmörku.","br":3,"k":[173,174],"ref":"4a","u":[{"l":"maki","n":"(óg.) Sigrún Björg Sævarsdóttir","b":"27. nóvember 1990","d":null,"pl":null,"nt":null,"o":"Nemi í óperusöng í Danmörku.","pa":null}]},{"i":173,"p":172,"g":5,"n":"Ásdís Þóra Arnardóttir","b":"21. nóvember 2018","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5a","u":[]},{"i":174,"p":172,"g":5,"n":"Ísak Darri Arnarson","b":"27. október 2021","d":null,"pl":null,"o":"","br":3,"k":[],"ref":"5b","u":[]},{"i":175,"p":171,"g":4,"n":"Rúna Ösp Unnsteinsdóttir","b":"20. apríl 1996","d":null,"pl":null,"o":"Leikskólastarfsmaður í Stykkishólmi.","br":3,"k":[],"ref":"4b","u":[{"l":"maki","n":"Einar Marteinn Bergþórsson","b":"19. júní 1986","d":null,"pl":null,"nt":null,"o":"Stykkishólmi.","pa":null}]},{"i":176,"p":171,"g":4,"n":"Lydía Rós Unnsteinsdóttir","b":"7. janúar 2001","d":null,"pl":null,"o":"Búfræðinemi á Hvanneyri. Kristín Sigríður Stefánsdóttir Sveinn Stefánsson","br":3,"k":[],"ref":"4c","u":[]},{"i":177,"p":0,"g":1,"n":"Kristín Sigríður Stefánsdóttir","b":"2. júní 1898","d":"27. ágúst 1993","pl":"á Hamri í Hamarsfirði","o":"Húsfreyja á Hálsi í Hamarsfirði.","br":4,"k":[178,194],"ref":"1e","u":[{"l":"maki","n":"Sveinn Stefánsson","b":"4. mars 1885","d":"17. febrúar 1963","pl":null,"nt":null,"o":"Bóndi á Hálsi í Hamarsfirði.","pa":"Foreldrar: Stefán Ólafsson (f. 27. júní 1838 – d. 13. febrúar 1907) bóndi í Kambshjáleigu í Búlandshreppi og Gróa Ingimundardóttir (f. 27. október 1846 – d. 16. mars 1920) húsfreyja."}]},{"i":178,"p":177,"g":2,"n":"Ingimar Sveinsson","b":"19. júní 1927","d":"29. maí 2020","pl":"á Hálsi í Hamarsfirði","o":"Kennari og skólastjóri á Djúpavogi.","br":4,"k":[179,182],"ref":"2a","u":[{"l":"maki","n":"Erla Ingimundardóttir","b":"5. nóvember 1936","d":null,"pl":null,"nt":null,"o":"Fyrrverandi kennari á Djúpavogi.","pa":null}]},{"i":179,"p":178,"g":3,"n":"Sigurður Ingi Ingimarsson","b":"21. janúar 1959","d":null,"pl":null,"o":"Framkvæmdastjóri á Seltjarnarnesi.","br":4,"k":[180,181],"ref":"3a","u":[{"l":"maki","n":"Vala Lárusdóttir","b":"24. júlí 1962","d":null,"pl":null,"nt":"skilin","o":"Sjúkraliði.","pa":null}]},{"i":180,"p":179,"g":4,"n":"Sigurður Ingi Sigurðarson","b":"19. júlí 2001","d":null,"pl":null,"o":"Háskólanemi.","br":4,"k":[],"ref":"4a","u":[]},{"i":181,"p":179,"g":4,"n":"Valur Ingi Sigurðarson","b":"30. maí 2003","d":null,"pl":null,"o":"Stúdent og sjómaður.","br":4,"k":[],"ref":"4b","u":[]},{"i":182,"p":178,"g":3,"n":"Sveinn Kristján Ingimarsson","b":"26. júní 1968","d":null,"pl":null,"o":"Fiskeldisfræðingur á Djúpavogi.","br":4,"k":[183,188,190,191,192,193],"ref":"3b","u":[{"l":"maki","n":"Guðrún Kristjana Jónsdóttir","b":"16. febrúar 1971","d":null,"pl":null,"nt":"skilin","o":"Hárgreiðslumeistari í Grindavík.","pa":null},{"l":"maki","n":"Íris Dögg Hákonardóttir","b":"21. febrúar 1981","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":183,"p":182,"g":4,"n":"Karen Sveinsdóttir","b":"4. ágúst 1989","d":null,"pl":null,"o":"Kennari á Djúpavogi.","br":4,"k":[184,185,186,187],"ref":"4a","u":[{"l":"maki","n":"Matthías Baldur Auðunsson","b":"23. maí 1990","d":null,"pl":null,"nt":null,"o":"Verkstjóri hjá Búlandstindi á Djúpavogi.","pa":null}]},{"i":184,"p":183,"g":5,"n":"Erla Marín Matthíasdóttir","b":"9. júlí 2015","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"5a","u":[]},{"i":185,"p":183,"g":5,"n":"Aría Björg Matthíasdóttir","b":"20. september 2017","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"5b","u":[]},{"i":186,"p":183,"g":5,"n":"Alexa Irmý Matthíasdóttir","b":"7. janúar 2020","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"5c","u":[]},{"i":187,"p":183,"g":5,"n":"Rökkvi Atlas Matthíasson","b":"29. mars 2022","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"5d","u":[]},{"i":188,"p":182,"g":4,"n":"Telma Lind Sveinsdóttir","b":"21. apríl 1995","d":null,"pl":null,"o":"Þjónn í Kópavogi.","br":4,"k":[189],"ref":"4b","u":[{"l":"maki","n":"(sambýlismaður) Fannar Freyr Sighvatsson","b":"18. júní 1997","d":null,"pl":null,"nt":null,"o":"Viðskiptafræðingur.","pa":null}]},{"i":189,"p":188,"g":5,"n":"Bergur Ingi Fannarsson","b":"30. maí 2023","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"5a","u":[]},{"i":190,"p":182,"g":4,"n":"Ingimar Sveinsson","b":"23. ágúst 1996","d":null,"pl":null,"o":"Matsveinn í Grindavík.","br":4,"k":[],"ref":"4c","u":[]},{"i":191,"p":182,"g":4,"n":"Andri Jón Sveinsson","b":"19. maí 2000","d":null,"pl":null,"o":"Nemi í Grindavík.","br":4,"k":[],"ref":"4d","u":[]},{"i":192,"p":182,"g":4,"n":"Brynja Kristjánsdóttir","b":"20. desember 2007","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"4e","u":[]},{"i":193,"p":182,"g":4,"n":"Ívar Orri Kristjánsson","b":"14. janúar 2013","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"4f","u":[]},{"i":194,"p":177,"g":2,"n":"Aðalborg Sveinsdóttir","b":"1. júní 1929","d":"27. nóvember 1978","pl":"á Hálsi í Hamarsfirði","o":"Húsmóðir í Reykjavík.","br":4,"k":[195],"ref":"2b","u":[{"l":"maki","n":"Finnbogi Jóhannsson","b":"8. maí 1930","d":"15. júlí 2021","pl":null,"nt":null,"o":"Kennari og skólastjóri í Reykjavík.","pa":null}]},{"i":195,"p":194,"g":3,"n":"Sveinn Finnbogason","b":"9. desember 1952","d":null,"pl":null,"o":"Stoðtækjafræðingur í Reykjavík.","br":4,"k":[196,200],"ref":"3a","u":[{"l":"maki","n":"Rannveig Andrésdóttir","b":"2. júlí 1956","d":null,"pl":null,"nt":null,"o":"Skólastjóri í Reykjavík.","pa":null}]},{"i":196,"p":195,"g":4,"n":"Haukur Már Sveinsson","b":"13. febrúar 1984","d":null,"pl":null,"o":"Sjúkraþjálfari í Reykjavík.","br":4,"k":[197,198,199],"ref":"4a","u":[{"l":"maki","n":"Inger Sofie Ágústsdóttir","b":"4. júlí 1981","d":null,"pl":null,"nt":null,"o":"Hjúkrunarfræðingur í Reykjavík.","pa":null}]},{"i":197,"p":196,"g":5,"n":"Þórdís Birna Hauksdóttir","b":"29. apríl 2015","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"5a","u":[]},{"i":198,"p":196,"g":5,"n":"Sigrún Lóa Hauksdóttir","b":"22. maí 2017","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"5b","u":[]},{"i":199,"p":196,"g":5,"n":"Erna Hrönn Hauksdóttir","b":"13. nóvember 2019","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"5c","u":[]},{"i":200,"p":195,"g":4,"n":"Birkir Örn Sveinsson","b":"16. desember 1993","d":null,"pl":null,"o":"Læknanemi í Danmörku.","br":4,"k":[201,202],"ref":"4b","u":[{"l":"maki","n":"Ólöf Kristín Þorsteinsdóttir","b":"7. mars 1993","d":null,"pl":null,"nt":null,"o":"Læknanemi í Danmörku.","pa":null}]},{"i":201,"p":200,"g":5,"n":"Baldur Hrafn Birkisson","b":"21. janúar 2019","d":null,"pl":null,"o":"","br":4,"k":[],"ref":"5a","u":[]},{"i":202,"p":200,"g":5,"n":"Ernir Bragi Birkisson","b":"15. maí 2023","d":null,"pl":null,"o":"F.v.: Herdís Þórlindsdóttir, Þóra Stefánsdóttir, Hrefna Ólafsdóttir, Ingibjörg Ólafsdóttir, Stefán Steinar Sigurgeir Stefánsson Guðrún Björg Bjarnadóttir","br":4,"k":[],"ref":"5b","u":[]},{"i":203,"p":0,"g":1,"n":"Sigurgeir Stefánsson","b":"9. janúar 1901","d":"10. desember 1957","pl":"á Hamri í Hamarsfirði","o":"Sjómaður á Djúpavogi.","br":5,"k":[204,227,228,242,261],"ref":"1f","u":[{"l":"maki","n":"Guðrún Björg Bjarnadóttir Austmann","b":"31. maí 1906","d":"16. nóvember 1946","pl":null,"nt":null,"o":"Húsmóðir á Djúpavogi.","pa":"Foreldrar: Bjarni Austmann Bjarnason (f. 19. ágúst 1876 – d. 30. apríl 1955) Fáskrúðsfirði og Stefanía Markúsdóttir (f. 29. ágúst 1884 – d. 10. apríl 1975) húsfreyja."}]},{"i":204,"p":203,"g":2,"n":"Albert Sigurgeirsson","b":"20. mars 1931","d":"5. júní 1971","pl":null,"o":"Framkvæmdastjóri í Reykjavík.","br":5,"k":[205,214,220,221,224],"ref":"2a","u":[{"l":"barnsmóðir","n":"Kristbjörg Lukka Jónsdóttir","b":"8. mars 1925","d":"26. desember 2004","pl":null,"nt":null,"o":"húsfreyja á Hrærekslæk í Hróarstungu.","pa":null},{"l":"maki","n":"Málfríður Guðmundsdóttir","b":"6. apríl 1935","d":null,"pl":null,"nt":null,"o":"Fóstra.","pa":null}]},{"i":205,"p":204,"g":3,"n":"Guðjóna Bryndís Albertsdóttir","b":"24. janúar 1948","d":null,"pl":null,"o":"Húsfreyja á Brekku í Hróarstungu.","br":5,"k":[206,209,213],"ref":"3a","u":[{"l":"maki","n":"Stefán Jónasson","b":"4. september 1941","d":null,"pl":null,"nt":null,"o":"Bóndi á Brekku í Hróarstungu.","pa":null}]},{"i":206,"p":205,"g":4,"n":"Jón Bjarki Stefánsson","b":"7. júlí 1966","d":null,"pl":null,"o":"Tæknifræðingur og nemi í Aarhus University.","br":5,"k":[207,208],"ref":"4a","u":[{"l":"maki","n":"Sigrún Björg Gunnlaugsdóttir","b":"21. október 1958","d":null,"pl":null,"nt":null,"o":"","pa":null},{"l":"maki","n":"Margrét Hróarsdóttir","b":"11. júní 1976","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":207,"p":206,"g":5,"n":"Stefán Smári Jónsson","b":"14. maí 1988","d":null,"pl":null,"o":"Grunnskólakennari á Akureyri.","br":5,"k":[],"ref":"5a","u":[{"l":"maki","n":"Vordís Guðmundsdóttir","b":"4. maí 1990","d":null,"pl":null,"nt":null,"o":"Grunnskólakennari á Akureyri.","pa":null}]},{"i":208,"p":206,"g":5,"n":"Linda Kristbjörg Jónsdóttir","b":"3. október 1989","d":null,"pl":null,"o":"Verkakona í Danmörku.","br":5,"k":[],"ref":"5b","u":[]},{"i":209,"p":205,"g":4,"n":"Sigurjón Stefánsson","b":"18. nóvember 1970","d":null,"pl":null,"o":"Verkstjóri og eigandi Fiskmarkaðs Djúpavogs.","br":5,"k":[210,211,212],"ref":"4b","u":[{"l":"maki","n":"Lilja Dögg Björgvinsdóttir","b":"11. maí 1972","d":null,"pl":null,"nt":null,"o":"Kennari á Djúpavogi.","pa":null},{"l":"maki","n":"Baldur Sigurðsson","b":"28. janúar 1983","d":null,"pl":null,"nt":null,"o":"Húsasmíðameistari á Djúpavogi.","pa":null}]},{"i":210,"p":209,"g":5,"n":"Aldís Sigurjónsdóttir","b":"23. ágúst 2005","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":211,"p":209,"g":5,"n":"Björgvin Sigurjónsson","b":"2. nóvember 2006","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":212,"p":209,"g":5,"n":"Haraldur Sigurjónsson","b":"2. nóvember 2006","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5c","u":[]},{"i":213,"p":205,"g":4,"n":"Aldís Björg Stefánsdóttir","b":"29. desember 1972","d":"14. september 1981","pl":null,"o":"","br":5,"k":[],"ref":"4c","u":[]},{"i":214,"p":204,"g":3,"n":"Særún Albertsdóttir","b":"28. nóvember 1955","d":null,"pl":null,"o":"Fyrrverandi kennari í Reykjavík.","br":5,"k":[215,217],"ref":"3b","u":[{"l":"fyrrverandi eiginmaður","n":"Lárus Hagalín Bjarnason","b":"21. júní 1956","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":215,"p":214,"g":4,"n":"Sólrún Ósk Lárusdóttir","b":"24. júní 1980","d":null,"pl":null,"o":"Sálfræðingur í Kópavogi.","br":5,"k":[216],"ref":"4a","u":[{"l":"maki","n":"Jakob Jóhannes Sigurðsson","b":"21. október 1979","d":null,"pl":null,"nt":null,"o":"Kerfisstjóri í Reykjavík.","pa":null}]},{"i":216,"p":215,"g":5,"n":"Sólon Ari Jakobsson","b":"16. júlí 2019","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":217,"p":214,"g":4,"n":"Aldís Rún Lárusdóttir","b":"29. september 1983","d":null,"pl":null,"o":"Byggingaverkfræðingur PDH í Reykjavík.","br":5,"k":[218,219],"ref":"4b","u":[{"l":"fyrrverandi eiginmaður","n":"Sigurjón Björnsson","b":"26. september 1981","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":218,"p":217,"g":5,"n":"Eyrún Lára Sigurjónsdóttir","b":"27. október 2007","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":219,"p":217,"g":5,"n":"Björn Kári Sigurjónsson","b":"11. desember 2009","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":220,"p":204,"g":3,"n":"Oddur Albertsson","b":"7. maí 1957","d":null,"pl":null,"o":"Reykjavík.","br":5,"k":[],"ref":"3c","u":[]},{"i":221,"p":204,"g":3,"n":"Ísrún Albertsdóttir","b":"8. maí 1966","d":null,"pl":null,"o":"Leikskólakennari í Reykjavík.","br":5,"k":[222,223],"ref":"3d","u":[{"l":"maki","n":"Ingvar Svavarsson","b":"15. desember 1972","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":222,"p":221,"g":4,"n":"Birta Blín Ísrúnardóttir","b":"24. október 1993","d":null,"pl":null,"o":"Fatahönnuður, klæðskeri og kjólasaumari í Bretlandi.","br":5,"k":[],"ref":"4a","u":[]},{"i":223,"p":221,"g":4,"n":"Máni Hrafn Ísrúnarson","b":"23. maí 1997","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"4b","u":[]},{"i":224,"p":204,"g":3,"n":"Óðinn Albertsson","b":"11. júní 1968","d":null,"pl":null,"o":"Verkefnisstjóri í Reykjavík.","br":5,"k":[225,226],"ref":"3e","u":[{"l":"maki","n":"Guðrún Helga Gunnarsdóttir","b":"5. febrúar 1971","d":null,"pl":null,"nt":null,"o":"Sérkennari í Reykjavík.","pa":null}]},{"i":225,"p":224,"g":4,"n":"Askur Tómas Óðinsson","b":"14. nóvember 1996","d":null,"pl":null,"o":"Tónlistarmaður í London.","br":5,"k":[],"ref":"4a","u":[]},{"i":226,"p":224,"g":4,"n":"Una Mist Óðinsdóttir","b":"6. júlí 2001","d":null,"pl":null,"o":"Nemi í Listaháskólanum í Reykjavík.","br":5,"k":[],"ref":"4b","u":[]},{"i":227,"p":203,"g":2,"n":"Oddur Sigurgeirsson","b":"20. desember 1932","d":"5. mars 1956","pl":null,"o":"Sjómaður á Djúpavogi.","br":5,"k":[],"ref":"2b","u":[]},{"i":228,"p":203,"g":2,"n":"Karl Andrés Sigurgeirsson","b":"14. desember 1934","d":"20. desember 1999","pl":null,"o":"Bóndi á Melrakkanesi í Álftafirði.","br":5,"k":[229,230,239],"ref":"2c","u":[{"l":"maki","n":"Þórunn Margrét Ragnarsdóttir","b":"22. september 1934","d":"3. október 2024","pl":null,"nt":null,"o":"Húsfreyja og bóndi á Melrakkanesi.","pa":null}]},{"i":229,"p":228,"g":3,"n":"Guðjón Björgvin Karlsson","b":"30. júlí 1954","d":"7. desember 2013","pl":null,"o":"Mosfellsbæ.","br":5,"k":[],"ref":"3a","u":[]},{"i":230,"p":228,"g":3,"n":"Ragna Sigurbjörg Karlsdóttir","b":"9. desember 1960","d":null,"pl":null,"o":"Kerfisfræðingur í Kópavogi.","br":5,"k":[231,235,238],"ref":"3b","u":[{"l":"maki","n":"Gísli Stefán Karlsson","b":"25. febrúar 1959","d":null,"pl":null,"nt":null,"o":"Kerfisfræðingur í Kópavogi.","pa":null}]},{"i":231,"p":230,"g":4,"n":"Karl Andrés Gíslason","b":"20. maí 1986","d":null,"pl":null,"o":"Hugbúnaðarverkfræðingur í Garðabæ.","br":5,"k":[232,233,234],"ref":"4a","u":[{"l":"maki","n":"Elísabet Þórunn Guðnadóttir","b":"5. september 1991","d":null,"pl":null,"nt":null,"o":"Sjúkraþjálfari.","pa":null}]},{"i":232,"p":231,"g":5,"n":"Fanney Karlsdóttir","b":"18. janúar 2019","d":"18. janúar 2019","pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":233,"p":231,"g":5,"n":"Gísli Stefán Karlsson","b":"9. september 2021","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":234,"p":231,"g":5,"n":"Hafdís Þyri Karlsdóttir","b":"25. apríl 2023","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5c","u":[]},{"i":235,"p":230,"g":4,"n":"Bryndís Rún Gísladóttir","b":"15. október 1987","d":null,"pl":null,"o":"","br":5,"k":[236,237],"ref":"4b","u":[{"l":"barnsfaðir","n":"Daníel Viðar Pétursson","b":"8. ágúst 1977","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":236,"p":235,"g":5,"n":"Una Katrín Daníelsdóttir","b":"2. júlí 2012","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":237,"p":235,"g":5,"n":"Pétur Sigurgeir Daníelsson","b":"18. ágúst 2014","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":238,"p":230,"g":4,"n":"Júlíus Geir Gíslason","b":"28. janúar 1992","d":null,"pl":null,"o":"Hugbúnaðarverkfræðingur í Garðabæ.","br":5,"k":[],"ref":"4c","u":[]},{"i":239,"p":228,"g":3,"n":"Oddur Sigurgeir Karlsson","b":"10. mars 1967","d":null,"pl":null,"o":"Kanada.","br":5,"k":[240,241],"ref":"3c","u":[{"l":"maki","n":"Gulmayram Amankogoeva","b":"7. nóvember 1979","d":null,"pl":null,"nt":null,"o":"Kanada.","pa":null}]},{"i":240,"p":239,"g":4,"n":"Þórunn Margrét Nazqul Karlsson","b":"17. ágúst 2002","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"4a","u":[]},{"i":241,"p":239,"g":4,"n":"Aidan Thor Karlsson","b":"27. janúar 2014","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"4b","u":[]},{"i":242,"p":203,"g":2,"n":"Hans Aðalsteinn Sigurgeirsson","b":"16. ágúst 1936","d":"27. júlí 2020","pl":null,"o":"Reykjavík.","br":5,"k":[243,252],"ref":"2d","u":[{"l":"maki","n":"Sigríður Guðmundsdóttir","b":"12. júní 1941","d":null,"pl":null,"nt":null,"o":"Reykjavík.","pa":null},{"l":"maki","n":"Gunnar Helgi Stefánsson","b":"27. desember 1957","d":null,"pl":null,"nt":null,"o":"Lögreglumaður í Reykjavík.","pa":null},{"l":"maki","n":"Ásta Þóra Gísladóttir","b":"28. ágúst 1994","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":243,"p":242,"g":3,"n":"Sigrún Bryndís Hansdóttir","b":"22. febrúar 1960","d":null,"pl":null,"o":"Veitingamaður í Álaborg í Danmörku.","br":5,"k":[244,247,250,251],"ref":"3a","u":[{"l":"maki","n":"Guðbergur Már Guðmundsson","b":"14. desember 1959","d":"10. desember 2022","pl":null,"nt":null,"o":"Verkfræðingur.","pa":null}]},{"i":244,"p":243,"g":4,"n":"Guðmundur Guðbergsson","b":"27. mars 1982","d":null,"pl":null,"o":"Verkfræðingur og herforingi í danska hernum.","br":5,"k":[245,246],"ref":"4a","u":[{"l":"maki","n":"Anja Solskær Gudbergsson","b":"17. apríl 1991","d":null,"pl":null,"nt":null,"o":"Hjúkrunarfræðingur í Danmörku.","pa":null}]},{"i":245,"p":244,"g":5,"n":"Elvar Solskær Gudbergsson","b":"9. október 2018","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":246,"p":244,"g":5,"n":"Nóel Solskær Gudbergsson","b":"28. febrúar 2020","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":247,"p":243,"g":4,"n":"Jóhann Már Guðbergsson","b":"25. maí 1989","d":null,"pl":null,"o":"Cand Med Scient og doktorsnemi í Danmörku.","br":5,"k":[248,249],"ref":"4b","u":[{"l":"maki","n":"Margrét Bergdís Friðriksdóttir","b":"22. apríl 1990","d":null,"pl":null,"nt":null,"o":"Læknanemi í Danmörku.","pa":null}]},{"i":248,"p":247,"g":5,"n":"Freyja Bryndís Jóhannsdóttir","b":"13. mars 2020","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":249,"p":247,"g":5,"n":"Axel Már Jóhannsson","b":"28. janúar 2024","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":250,"p":243,"g":4,"n":"Heimir Örn Guðbergsson","b":"30. ágúst 1991","d":null,"pl":null,"o":"Læknanemi í Danmörku.","br":5,"k":[],"ref":"4c","u":[]},{"i":251,"p":243,"g":4,"n":"Gunnar Hrafn Guðbergsson","b":"8. mars 1994","d":null,"pl":null,"o":"Bifvélavirki í Danmörku.","br":5,"k":[],"ref":"4d","u":[]},{"i":252,"p":242,"g":3,"n":"Guðmundur Hansson","b":"12. maí 1962","d":"5. ágúst 2022","pl":null,"o":"Veitingamaður í Reykjavík.","br":5,"k":[253,256,259],"ref":"3b","u":[{"l":"fyrrverandi eiginkona","n":"Elísabet Haraldsdóttir","b":"27. ágúst 1962","d":null,"pl":null,"nt":null,"o":"Hárgreiðslumeistari í Reykjavík.","pa":null}]},{"i":253,"p":252,"g":4,"n":"Haraldur Guðmundsson","b":"24. maí 1984","d":null,"pl":null,"o":"Flugmaður.","br":5,"k":[254,255],"ref":"4a","u":[{"l":"maki","n":"Bryndís Bjarnadóttir","b":"10. febrúar 1984","d":null,"pl":null,"nt":null,"o":"Hjúkrunarfræðingur.","pa":null}]},{"i":254,"p":253,"g":5,"n":"Ísabella Haraldsdóttir","b":"22. júní 2009","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":255,"p":253,"g":5,"n":"Elísabet Haraldsdóttir","b":"30. júlí 2015","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":256,"p":252,"g":4,"n":"Albert Þór Guðmundsson","b":"16. desember 1988","d":null,"pl":null,"o":"Hagfræðingur.","br":5,"k":[257,258],"ref":"4b","u":[{"l":"maki","n":"Snædís Björt Agnarsdóttir","b":"15. desember 1988","d":null,"pl":null,"nt":null,"o":"Lögfræðingur.","pa":null}]},{"i":257,"p":256,"g":5,"n":"Torfi Stefán Albertsson","b":"29. janúar 2018","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":258,"p":256,"g":5,"n":"Hjalti Bergsteinn Albertsson","b":"20. maí 2020","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":259,"p":252,"g":4,"n":"Stefán Guðmundsson","b":"14. apríl 1994","d":null,"pl":null,"o":"Veitingamaður. - Guðbjörg Lilja Svavarsdóttir","br":5,"k":[260],"ref":"4c","u":[{"l":"single","n":null,"b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":260,"p":259,"g":5,"n":"Brynja Þórunn Stefánsdóttir","b":"30. nóvember 2022","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":261,"p":203,"g":2,"n":"Hrönn Kristborg Sigurgeirsdóttir Haraldsson","b":"16. ágúst 1936","d":"28. desember 2018","pl":null,"o":"Ontario, Kanada.","br":5,"k":[262,268,276],"ref":"2e","u":[{"l":"maki","n":"Finnbogi Þórir Haraldsson","b":"15. mars 1930","d":"4. apríl 2024","pl":null,"nt":null,"o":"Ontario, Kanada.","pa":null}]},{"i":262,"p":261,"g":3,"n":"Guðrún Björg Finnbogadottir Gallo","b":"6. janúar 1964","d":null,"pl":null,"o":"Listmálari í Kanada.","br":5,"k":[263,266,267],"ref":"3a","u":[{"l":"maki","n":"Elia Gallo","b":"21. maí 1962","d":"1. október 2023","pl":null,"nt":null,"o":"Endurskoðandi og vínræktandi í Kanada.","pa":null}]},{"i":263,"p":262,"g":4,"n":"Michael Avery Gallo","b":"8. mars 1993","d":null,"pl":null,"o":"Verksmiðjustarfsmaður í Kanada.","br":5,"k":[264,265],"ref":"4a","u":[{"l":"maki","n":"Christine Louise Sedore","b":"4. október 1999","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":264,"p":263,"g":5,"n":"Gia Eleanor Gallo","b":"2. september 2019","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":265,"p":263,"g":5,"n":"Vincent Elijah Gallo","b":"13. janúar 2023","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":266,"p":262,"g":4,"n":"Matthew Aaron Gallo","b":"16. ágúst 1995","d":null,"pl":null,"o":"Kokkur í Kanada.","br":5,"k":[],"ref":"4b","u":[]},{"i":267,"p":262,"g":4,"n":"Adam Elia Gallo","b":"23. desember 2000","d":null,"pl":null,"o":"Nemi í landslagshönnun í Kanada.","br":5,"k":[],"ref":"4c","u":[{"l":"maki","n":"Olyvia McLachlan – Gallo","b":"13. desember 1999","d":null,"pl":null,"nt":null,"o":"Kanada.","pa":null}]},{"i":268,"p":261,"g":3,"n":"Ósk Finnbogadottir Jenkins","b":"28. apríl 1965","d":null,"pl":null,"o":"Þroskaþjálfi í Ontario, Kanada.","br":5,"k":[269,272,273],"ref":"3b","u":[{"l":"maki","n":"Rhys Peter Jenkins","b":"23. desember 1964","d":null,"pl":null,"nt":null,"o":"Verkfræðingur í Ontario, Kanada.","pa":null}]},{"i":269,"p":268,"g":4,"n":"Iain Rhys Jenkins","b":"5. ágúst 1990","d":null,"pl":null,"o":"Rafvirki í Kanada.","br":5,"k":[270,271],"ref":"4a","u":[{"l":"maki","n":"Alexandra Karthaus Jenkins","b":"28. júní 1989","d":null,"pl":null,"nt":null,"o":"Snyrtifræðingur í Kanada.","pa":null}]},{"i":270,"p":269,"g":5,"n":"Finn Edward Jenkins","b":"19. júní 2021","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":271,"p":269,"g":5,"n":"Theo Patrick Jenkins","b":"1. september 2023","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":272,"p":268,"g":4,"n":"Nolan Micheal Jenkins","b":"27. mars 1992","d":null,"pl":null,"o":"Járnsmiður í Kanada.","br":5,"k":[],"ref":"4b","u":[]},{"i":273,"p":268,"g":4,"n":"Hannah Elizabeth Osk Bennett","b":"31. desember 1995","d":null,"pl":null,"o":"Hestaþjálfari í Kanada.","br":5,"k":[274,275],"ref":"4c","u":[{"l":"maki","n":"Robert Jordan Bennett","b":"20. mars 1995","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":274,"p":273,"g":5,"n":"Amelia Osk Bennett","b":"8. september 2018","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5a","u":[]},{"i":275,"p":273,"g":5,"n":"Payton Elizabeth Bennett","b":"30. apríl 2022","d":null,"pl":null,"o":"","br":5,"k":[],"ref":"5b","u":[]},{"i":276,"p":261,"g":3,"n":"Hrönn Finnbogadottir Haraldsson","b":"5. ágúst 1966","d":null,"pl":null,"o":"Arkitekt í Kanada.","br":5,"k":[277,278,279,280,281],"ref":"3c","u":[{"l":"maki","n":"Kenneth Farrow","b":"8. desember 1964","d":null,"pl":null,"nt":null,"o":"Rafvirki í Kanada.","pa":null}]},{"i":277,"p":276,"g":4,"n":"Kristján Lawerence Haraldsson Farrow","b":"15. desember 1994","d":null,"pl":null,"o":"Nemi.","br":5,"k":[],"ref":"4a","u":[]},{"i":278,"p":276,"g":4,"n":"Maia Kendra Haraldsson Farrow","b":"9. nóvember 1997","d":null,"pl":null,"o":"Háskólanemi.","br":5,"k":[],"ref":"4b","u":[]},{"i":279,"p":276,"g":4,"n":"Griffin Quinn Haraldsson Farrow","b":"9. maí 2000","d":null,"pl":null,"o":"Nemi.","br":5,"k":[],"ref":"4c","u":[]},{"i":280,"p":276,"g":4,"n":"Clayton Sebastian Haraldsson Farrow","b":"14. janúar 2003","d":null,"pl":null,"o":"Nemi.","br":5,"k":[],"ref":"4d","u":[]},{"i":281,"p":276,"g":4,"n":"Donovan Kenneth Haraldsson Farrow","b":"6. janúar 2006","d":null,"pl":null,"o":"Nemi. Sigurður Þórlindsson við Miðgróf á Hamri.","br":5,"k":[],"ref":"4e","u":[]},{"i":282,"p":0,"g":1,"n":"Drengur Stefánsson","b":"7. maí 1904","d":"9. maí 1904","pl":"á Hamri í Hamarsfirði","o":"Aftari röð frá vinstri: Þóra, Stefán og Aðalsteinn. Fremri röð frá vinstri: Sigurgeir og Kristín Sigríður. Bjarnfríður Vilhjálmsdóttir og Guðlaugur Stefánsson.","br":6,"k":[],"ref":"1g","u":[]},{"i":283,"p":0,"g":1,"n":"Guðlaugur Stefánsson","b":"31. janúar 1906","d":"4. nóvember 1957","pl":"á Hamri í Hamarsfirði","o":"Bóndi og trésmiður á Hamri í Hamarsfirði, síðar í Reykjavík og Kópavogi.","br":7,"k":[284,310],"ref":"1h","u":[{"l":"maki","n":"Bjarnfríður Vilhjálmsdóttir","b":"4. janúar 1905","d":"21. júlí 1986","pl":null,"nt":null,"o":"Húsmóðir og saumakona í Reykjavík og Kópavogi.","pa":"Foreldrar: Vilhjálmur Kristinn Ásmundsson (f. 17. mars 1873 – d. 17. júní 1944) og Hólmfríður Snorradóttir (f. 29. júní 1873 – d. 10. desember 1945)."}]},{"i":284,"p":283,"g":2,"n":"Sjöfn Guðlaugsdóttir Pent","b":"29. febrúar 1928","d":"30. ágúst 2013","pl":null,"o":"Suður – Karólínu í Bandaríkjunum","br":7,"k":[285,288,295,301,303],"ref":"2a","u":[{"l":"maki","n":"Joseph A. Pent","b":null,"d":"19. desember 1973","pl":null,"nt":null,"o":"Bandaríkjunum.","pa":null}]},{"i":285,"p":284,"g":3,"n":"Joseph Pent","b":"23. febrúar 1947","d":"19. desember 2013","pl":null,"o":"Bandaríkjunum.","br":7,"k":[286],"ref":"3a","u":[{"l":"maki","n":"Hon Hua","b":"9. apríl 1949","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":286,"p":285,"g":4,"n":"Debbie Ann Pent","b":"9. mars 1972","d":null,"pl":null,"o":"","br":7,"k":[287],"ref":"4a","u":[{"l":"maki","n":"Brad Guiden","b":"15. nóvember 1971","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":287,"p":286,"g":5,"n":"Dolary Lint Guiden","b":"2. mars 2013","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":288,"p":284,"g":3,"n":"Frida Lauga Pent","b":"30. apríl 1949","d":null,"pl":null,"o":"Bandaríkjunum.","br":7,"k":[289,290],"ref":"3b","u":[{"l":"maki","n":"Ray Forest Winchester","b":"17. maí 1949","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":289,"p":288,"g":4,"n":"Ray Forest Winchester","b":"11. apríl 1971","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"4a","u":[{"l":"maki","n":"Evon Marie Billingely","b":"18. desember 1973","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":290,"p":288,"g":4,"n":"Annette Lynn Winchester","b":"10. janúar 1973","d":null,"pl":null,"o":"","br":7,"k":[291,292,293,294],"ref":"4b","u":[{"l":"maki","n":"Todd Westly Christensen","b":"25. janúar 1962","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":291,"p":290,"g":5,"n":"Jacob Lee Evans","b":"17. janúar 1997","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":292,"p":290,"g":5,"n":"Sarah Katherine Evans","b":"16. maí 2000","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5b","u":[]},{"i":293,"p":290,"g":5,"n":"Robinson Westly Winchester","b":"21. desember 2004","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5c","u":[]},{"i":294,"p":290,"g":5,"n":"Wilson Todd Christensen","b":"10. maí 2007","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5d","u":[]},{"i":295,"p":284,"g":3,"n":"Stephan Floyd Pent","b":"12. nóvember 1950","d":null,"pl":null,"o":"Bandaríkjunum.","br":7,"k":[296],"ref":"3c","u":[{"l":"maki","n":"Kathy Ann Slavik","b":"26. mars 1954","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":296,"p":295,"g":4,"n":"Misty Pent","b":"17. janúar 1975","d":null,"pl":null,"o":"","br":7,"k":[297,298,299,300],"ref":"4a","u":[{"l":"maki","n":"Harry Brickhouse","b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":297,"p":296,"g":5,"n":"Stefan Ryan Pent","b":"7. september 1989","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":298,"p":296,"g":5,"n":"Jenniesa Marie Lara","b":"19. október 1995","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5b","u":[]},{"i":299,"p":296,"g":5,"n":"Alepa Nicole Brickhouse","b":"26. júlí 2007","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5c","u":[]},{"i":300,"p":296,"g":5,"n":"Aliyha McCraby","b":"19. maí 2015","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5d","u":[]},{"i":301,"p":284,"g":3,"n":"Dolores Ann Pent","b":"27. febrúar 1952","d":null,"pl":null,"o":"Bandaríkjunum.","br":7,"k":[302],"ref":"3d","u":[{"l":"maki","n":"Harry G. Peacock","b":null,"d":"25. ágúst 2015","pl":null,"nt":null,"o":"","pa":null}]},{"i":302,"p":301,"g":4,"n":"Kimberly Ann Peacock","b":"27. júlí 1973","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"4a","u":[{"l":"maki","n":"Robert Tynes Prewitt","b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":303,"p":284,"g":3,"n":"Allen Neal Pent","b":"29. júlí 1953","d":null,"pl":null,"o":"Bandaríkjunum.","br":7,"k":[304,306,309],"ref":"3e","u":[{"l":"maki","n":"Starr Fragien","b":"12. október 1961","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":304,"p":303,"g":4,"n":"Allen Niel Pent","b":"11. febrúar 1985","d":null,"pl":null,"o":"","br":7,"k":[305],"ref":"4a","u":[{"l":"maki","n":"Mandy Mardow","b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":305,"p":304,"g":5,"n":"Trae Allen Pent","b":"23. júlí 2016","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":306,"p":303,"g":4,"n":"Shannon Nicole Pent","b":"22. desember 1988","d":null,"pl":null,"o":"","br":7,"k":[307,308],"ref":"4b","u":[{"l":"single","n":null,"b":null,"d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":307,"p":306,"g":5,"n":"Natalie Nicole Pent","b":"29. apríl 2010","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":308,"p":306,"g":5,"n":"Rihanna Starr Pent","b":"12. janúar 2012","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5b","u":[]},{"i":309,"p":303,"g":4,"n":"Joseph G. Pent","b":"8. júní 1991","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"4c","u":[]},{"i":310,"p":283,"g":2,"n":"Vilhjálmur Stefán Guðlaugsson","b":"16. júlí 1930","d":"31. október 2016","pl":null,"o":"Húsasmiður í Kópavogi.","br":7,"k":[311,316,321,332,342],"ref":"2b","u":[{"l":"barnsmóðir","n":"Guðný Þórarinsdóttir","b":"24. október 1928","d":null,"pl":null,"nt":null,"o":"","pa":null},{"l":"maki","n":"Dagmar Ásgeirsdóttir","b":"3. október 1934","d":"27. mars 2024","pl":null,"nt":null,"o":"Verslunarmaður í Kópavogi.","pa":null}]},{"i":311,"p":310,"g":3,"n":"Hafdís Hulda Vilhjálmsdóttir","b":"4. apríl 1953","d":null,"pl":null,"o":"Bókavörður í Reykjavík.","br":7,"k":[312,314],"ref":"3a","u":[{"l":"maki","n":"Grímur Kjartansson","b":"11. desember 1954","d":null,"pl":null,"nt":null,"o":"Verkfræðingur í Reykjavík.","pa":null}]},{"i":312,"p":311,"g":4,"n":"Einar Grímsson","b":"2. mars 1984","d":null,"pl":null,"o":"Verkstjóri í Hafnarfirði.","br":7,"k":[313],"ref":"4a","u":[{"l":"sambýliskona","n":"Agnes Eir Önundardóttir","b":"14. júní 1989","d":null,"pl":null,"nt":null,"o":"Lögfræðingur í Reykjavík.","pa":null}]},{"i":313,"p":312,"g":5,"n":"Hera Lind Einarsdóttir","b":"30. október 2024","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":314,"p":311,"g":4,"n":"Guðný Helga Grímsdóttir","b":"3. nóvember 1986","d":null,"pl":null,"o":"Kennari og húsgagnasmiður á Reyðarfirði.","br":7,"k":[315],"ref":"4b","u":[{"l":"sambýlismaður","n":"Sigurður Helgi Magnússon","b":"4. mars 1988","d":null,"pl":null,"nt":null,"o":"Verslunarmaður á Egilsstöðum.","pa":null}]},{"i":315,"p":314,"g":5,"n":"Matthildur Helga Sigurðardóttir","b":"10. júní 2024","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":316,"p":310,"g":3,"n":"Bjarnfríður Vilhjálmsdóttir","b":"22. apríl 1956","d":null,"pl":null,"o":"Arkitekt í Stykkishólmi.","br":7,"k":[317],"ref":"3b","u":[{"l":"maki","n":"Steingrímur Matthíasson","b":"30. desember 1953","d":"25. október 1980","pl":null,"nt":null,"o":"","pa":null},{"l":"maki","n":"Þór Örn Jónsson","b":"8. febrúar 1958","d":null,"pl":null,"nt":null,"o":"Stjórnsýslufræðingur í Stykkishólmi.","pa":null}]},{"i":317,"p":316,"g":4,"n":"Brynja Steingrímsdóttir Kröyer","b":"31. maí 1975","d":null,"pl":null,"o":"MBA í stjórnun. Danmörku.","br":7,"k":[318,319,320],"ref":"4a","u":[{"l":"maki","n":"Brian S. Jespersen","b":"27. október 1965","d":null,"pl":null,"nt":null,"o":"Danmörku.","pa":null},{"l":"maki","n":"Per Groth Kröyer","b":"15. febrúar 1973","d":null,"pl":null,"nt":null,"o":"Danmörku.","pa":null}]},{"i":318,"p":317,"g":5,"n":"Mathias Tor Jespersen","b":"16. september 1999","d":null,"pl":null,"o":"Matreiðslumeistari í Danmörku.","br":7,"k":[],"ref":"5a","u":[{"l":"sambýslikona","n":"Sofia Helby","b":"26. febrúar 2002","d":null,"pl":null,"nt":null,"o":"Danmörku.","pa":null}]},{"i":319,"p":317,"g":5,"n":"Jakob Torbjörn Kröyer","b":"5. nóvember 2008","d":null,"pl":null,"o":"Danmörku.","br":7,"k":[],"ref":"5b","u":[]},{"i":320,"p":317,"g":5,"n":"Lasse Emil Kröyer","b":"13. apríl 2010","d":null,"pl":null,"o":"Danmörku.","br":7,"k":[],"ref":"5c","u":[]},{"i":321,"p":310,"g":3,"n":"Ásgeir Vilhjálmsson","b":"5. september 1957","d":"24. janúar 2024","pl":null,"o":"Húsasmiður í Kópavogi.","br":7,"k":[322,323,328],"ref":"3c","u":[{"l":"maki","n":"Elísabet Árnadóttir","b":"18. ágúst 1960","d":null,"pl":null,"nt":null,"o":"Húsmóðir í Búðardal.","pa":null},{"l":"maki","n":"Laufey R. Brekkan","b":"6. apríl 1966","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":322,"p":321,"g":4,"n":"Árni Stefán Ásgeirsson","b":"12. mars 1982","d":null,"pl":null,"o":"Umhverfis- og byggingaverkfræðingur.","br":7,"k":[],"ref":"4a","u":[]},{"i":323,"p":321,"g":4,"n":"Rebekka Dagmar Ásgeirsdóttir Elísabetardóttir","b":"3. mars 1986","d":null,"pl":null,"o":"BA - gráða í ensku og Bsc – gráða í sálfræði.","br":7,"k":[324,325,326,327],"ref":"4b","u":[{"l":"maki","n":"Joseph Daniel Young","b":"14. júlí 1992","d":"1. mars 2020","pl":null,"nt":null,"o":"","pa":null},{"l":"maki","n":"Ómar Sigurbjörn Ómarsson","b":"9. mars 1989","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":324,"p":323,"g":5,"n":"Hrafn Hugi Josephson","b":"25. október 2014","d":"25. október 2014","pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":325,"p":323,"g":5,"n":"Eryn Sóldís Josephsdóttir Young","b":"19. september 2016","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5b","u":[]},{"i":326,"p":323,"g":5,"n":"Astrid Ísold Ómarsdóttir","b":"7. október 2020","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5c","u":[]},{"i":327,"p":323,"g":5,"n":"Iðunn Embla Ómarsdóttir","b":"21. mars 2022","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5d","u":[]},{"i":328,"p":321,"g":4,"n":"Vilhjálmur Ásgeirsson","b":"6. nóvember 1988","d":null,"pl":null,"o":"Doktor í efnafræði og einkaleyfaráðgjafi.","br":7,"k":[329,330,331],"ref":"4c","u":[{"l":"maki","n":"(óg.) Hafrún Eir Hafliðadóttir","b":"14. maí 1988","d":null,"pl":null,"nt":null,"o":"Sjúkraliði.","pa":null},{"l":"maki","n":"(sambýliskona) Berglind Sunna Bragadóttir","b":"21. október 1992","d":null,"pl":null,"nt":null,"o":"Markaðsfulltrúin hjá Icelandair.","pa":null}]},{"i":329,"p":328,"g":5,"n":"Viktor Máni Edwardsson","b":"21. apríl 2006","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":330,"p":328,"g":5,"n":"Árni Snær Vilhjálmsson","b":"8. nóvember 2014","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5b","u":[]},{"i":331,"p":328,"g":5,"n":"Elísabet Ísey Vilhjálmsdóttir","b":"15. desember 2016","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5c","u":[]},{"i":332,"p":310,"g":3,"n":"Sjöfn Guðlaug Vilhjálmsdóttir","b":"1. október 1961","d":null,"pl":null,"o":"Leikskólastjóri, Ásgarði, Reykholtsdal í Borgarfirði.","br":7,"k":[333,337,339,340,341],"ref":"3d","u":[{"l":"maki","n":"Magnús Þór Eggertsson","b":"4. september 1960","d":null,"pl":null,"nt":null,"o":"Bóndi í Ásgarði, Reykholtsdal í Borgarfirði.","pa":null}]},{"i":333,"p":332,"g":4,"n":"Eggert Magnússon","b":"27. janúar 1987","d":null,"pl":null,"o":"Vélvirki.","br":7,"k":[334,335,336],"ref":"4a","u":[{"l":"maki","n":"Kristín Ásdís Snorradóttir","b":"11. maí 1990","d":null,"pl":null,"nt":null,"o":"Snyrtifræðingur og háskólanemi.","pa":null}]},{"i":334,"p":333,"g":5,"n":"Guðmundur Þór Eggertsson","b":"22. desember 2010","d":null,"pl":null,"o":"Grunnskólanemi.","br":7,"k":[],"ref":"5a","u":[]},{"i":335,"p":333,"g":5,"n":"Stefán Örn Eggertsson","b":"1. mars 2017","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5b","u":[]},{"i":336,"p":333,"g":5,"n":"Ásdís Sjöfn Eggertsdóttir","b":"10. júlí 2019","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5c","u":[]},{"i":337,"p":332,"g":4,"n":"Bjarnfríður Magnúsdóttir","b":"19. apríl 1991","d":null,"pl":null,"o":"M.Ed. gráða í íþrótta- og heilsufræði.","br":7,"k":[338],"ref":"4b","u":[{"l":"maki","n":"Þóroddur Einar Þórðarson","b":"19. júní 1990","d":null,"pl":null,"nt":null,"o":"MS-gráða í íþrótta- og heilsufræði.","pa":null}]},{"i":338,"p":337,"g":5,"n":"Elvar Snær Þóroddsson","b":"3. ágúst 2023","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":339,"p":332,"g":4,"n":"Fjóla Magnúsdóttir","b":"23. október 1998","d":"23. október 1998","pl":null,"o":"","br":7,"k":[],"ref":"4c","u":[]},{"i":340,"p":332,"g":4,"n":"Guðjón Snær Magnússon","b":"15. desember 2000","d":null,"pl":null,"o":"Háskólanemi.","br":7,"k":[],"ref":"4d","u":[]},{"i":341,"p":332,"g":4,"n":"Ingi Þór Magnússon","b":"15. desember 2000","d":null,"pl":null,"o":"Vélaviðgerðarmaður.","br":7,"k":[],"ref":"4e","u":[{"l":"maki","n":"Vilborg Helga Bergþórsdóttir","b":"23. mars 2000","d":null,"pl":null,"nt":null,"o":"Bókari.","pa":null}]},{"i":342,"p":310,"g":3,"n":"Hanna Þorgerður Vilhjálmsdóttir","b":"18. maí 1965","d":null,"pl":null,"o":"Líffræðingur og lýðheilsufræðingur í Reykjavík.","br":7,"k":[343,345,347],"ref":"3e","u":[{"l":"maki","n":"Jens Þór Svansson","b":"12. desember 1963","d":null,"pl":null,"nt":null,"o":"Viðskiptafræðingur í Reykjavík.","pa":null}]},{"i":343,"p":342,"g":4,"n":"Ingunn Jensdóttir","b":"5. nóvember 1988","d":null,"pl":null,"o":"Verkfræðingur.","br":7,"k":[344],"ref":"4a","u":[{"l":"maki","n":"Kjartan Óli Guðmundsson","b":"26. desember 1990","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":344,"p":343,"g":5,"n":"Kolbeinn Flóki Ingunnarson Kjartansson","b":"6. nóvember 2022","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":345,"p":342,"g":4,"n":"Þórhildur Jensdóttir","b":"15. febrúar 1993","d":null,"pl":null,"o":"Verkfræðingur.","br":7,"k":[346],"ref":"4b","u":[{"l":"maki","n":"Ólafur Örn Guðmundsson","b":"27. febrúar 1993","d":null,"pl":null,"nt":null,"o":"","pa":null}]},{"i":346,"p":345,"g":5,"n":"Kári Þór Ólafsson","b":"30. maí 2022","d":null,"pl":null,"o":"","br":7,"k":[],"ref":"5a","u":[]},{"i":347,"p":342,"g":4,"n":"Vilhjálmur Kári Jensson","b":"23. október 1996","d":null,"pl":null,"o":"Hugbúnaðarverkfræðingur. Kristborg Stefánsdóttir","br":7,"k":[],"ref":"4c","u":[]},{"i":348,"p":0,"g":1,"n":"Kristborg Stefánsdóttir","b":"17. október 1909","d":"4. október 1914","pl":"á Hamri í Hamarsfirði","o":"F.v.: Steinunn Einarsdóttir, Jón Ólafsson, Örn Ólafsson, Ólafur Þórlindsson, Ingibjörg Ólafsdóttir, Hrefna Ólafsdóttir, Þóra Stefánsdóttir, Stefán Steinar Ólafsson . FRAMÆTTIR Myndir teknar við útför Stefáns Sigurðssonar í september 1942. Aftasta röð f.v.: Hrefna Ólafsdóttir, Aðalsteinn Aðalsteinsson, Jón Ólafsson, Stefán Steinar Ólafsson og Ingibjörg Ólafsdóttir. Miðröð f.v.: Ingimar Sveinsson, Örn Ólafsson, Albert og Karl Sigurgeirssynir. Fremst f.v.: Hrönn Kristborg Sigurgeirsdóttir og Hans Aðalsteinn Sigurgeirsson Frændfólk frá Hamri F.v. Auður Stefánsdóttir, Hrefna Ólafsdóttir og Aðalborg Sveinsdóttir F.v. Hrefna, Stefán Steinar, Ingibjörg og Örn Ólafsbörn Aðalsteinn Aðalsteinsson Oddur Sigurgeirsson Kristín Bessadóttir Dáin árið 1902. Æviskeiðið út er runnið öndin sveif í friðarskaut lífsins skæra ljós út brunnið er lýsti upp fagra byggða braut hetjan mikla hefur unnið heimsins alla sorg og þraut. Hvar mun betra hjarta finnast en hafði þetta aldna fljóð hennar væri vert að minnast vinum sínum trygg og góð aldrei sást á gæðum grynnast með göfuglyndi studdi þjóð. Hjartagóð við hruma lýði hjálpar oft þeim rétti mund lagði á ráð með rausn og prýði raunamargri eyddi stund. Fyndi hún menn í ströngu stríði strax hún gladdi þeirra lund. Ungur hlaut ég móður mína missa í dauðans kalda bað kramdi hjarta kvíði og pína Kristín græddi meinið það um mig vafði arma sína og mér gekk í hennar stað. Hennar mæti maður líka mér þá gekk í föður stað aðstoð sýndi ástarríka yndisgeislum stráði að brast ei neitt á blessun slíka bið ég drottin launa það. Í fóstru minnar faðmi þýðum fann ég ungur hvíld og fró hún með ástartárum tíðum trúarljósið að mér dró með áminningarorðum blíðum undir lífsins vegferð bjó. Ýmsa hjörtu angur særa enginn gleðibjarmi skín þeirri látnu þakkir færa þetta hrós hjá lýðum dvín meðan öndin brjóstin bæra. Blessuð veri minning þín. Antoníus Sigurðsson Kristborg Stefánsdóttir Fædd 17. október 1909 – Dáin 4. október 1914. Hvíl, ó hvíl í friði Aftari röð f.v.: Herdís Þórlindsdóttir, Þóra Stefánsdóttir?, Sveinn Stefánsson,Kristín Stefánsdóttir, Stefán Stefánsson, Jónína Sigurðardóttir, Steinunn Einarsdóttir, Ásgeir Stefánsson, óþekktur á bak við Ásgeir. Fremri röð f.v.: Stefán Steinar Ólafsson, Hrefna Ólafsdóttir, Auður Stefánsdóttir, Ingimar Sveinsson,","br":8,"k":[],"ref":"1i","par":"Foreldrarnir.","u":[]}]</script>
+<script>
+"use strict";
+const P = JSON.parse(document.getElementById('data').textContent);
+const byId = new Map(P.map(p => [p.i, p]));
+const ROOT = P[0];
+
+/* ---- branch colours: 6 real branches get hues, infants stay neutral ---- */
+const HUES = ['--s1','--s2','--s3','--s4','--s5','--s6','--s7','--s8'];
+const gen1 = P.filter(p => p.g === 1);
+const branchCount = {}, branchName = {}, branchColor = {};
+gen1.forEach((p, i) => { branchName[i] = p.n; branchCount[i] = 0; });
+P.forEach(p => { if (p.br >= 0) branchCount[p.br]++; });
+let hi = 0;
+gen1.forEach((p, i) => {
+  branchColor[i] = branchCount[i] > 1 ? `var(${HUES[hi++ % 8]})` : 'var(--neutral)';
+});
+const colOf = p => p.br >= 0 ? branchColor[p.br] : 'var(--line-strong)';
+
+/* ---- text helpers ---- */
+const esc = s => (s == null ? '' : String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])));
+const yearOf = s => { if (!s) return null; const m = String(s).match(/(\d{4})/); return m ? m[1] : null; };
+function lifeShort(p){
+  const b = yearOf(p.b), d = yearOf(p.d);
+  if (p.note === 'andvana') return 'andvana ' + (b || '');
+  if (b && d) return b + '–' + d;
+  if (b) return 'f. ' + b;
+  if (d) return 'd. ' + d;
+  return '';
+}
+function lifeLong(p){
+  const bits = [];
+  if (p.b) bits.push('f. ' + p.b + (p.pl ? ' ' + p.pl : ''));
+  else if (p.pl) bits.push(p.pl);
+  if (p.d) bits.push('d. ' + p.d);
+  if (p.note === 'andvana') bits.push('andvana');
+  return bits.join(' · ');
+}
+const LBL = { maki:'Maki', barnsfaðir:'Barnsfaðir', barnsmóðir:'Barnsmóðir',
+  sambýlismaður:'Sambýlismaður', sambýliskona:'Sambýliskona', single:'Barn' };
+const labelOf = u => LBL[u.l] || (u.l ? u.l.charAt(0).toUpperCase() + u.l.slice(1) : 'Maki');
+
+/* ---- text measurement + wrapping ---- */
+const mc = document.createElement('canvas').getContext('2d');
+const FONT_N = '650 13px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif';
+const FONT_S = '11px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif';
+function wrap(text, maxW, font, maxLines){
+  mc.font = font;
+  const words = String(text || '').split(' ');
+  const lines = []; let cur = '';
+  for (const w of words){
+    const t = cur ? cur + ' ' + w : w;
+    if (mc.measureText(t).width <= maxW || !cur) cur = t;
+    else { lines.push(cur); cur = w; if (lines.length === maxLines - 1) break; }
+  }
+  if (cur) lines.push(cur);
+  if (lines.length > maxLines) lines.length = maxLines;
+  if (lines.length === maxLines){
+    let last = lines[maxLines - 1];
+    const consumed = lines.join(' ');
+    if (consumed.length < String(text).length && mc.measureText(last).width > maxW - 12){
+      while (last.length > 3 && mc.measureText(last + '…').width > maxW) last = last.slice(0, -1);
+      lines[maxLines - 1] = last + '…';
+    }
+  }
+  return lines;
+}
+function clip(text, maxW, font){
+  mc.font = font;
+  let t = String(text || '');
+  if (mc.measureText(t).width <= maxW) return t;
+  while (t.length > 2 && mc.measureText(t + '…').width > maxW) t = t.slice(0, -1);
+  return t + '…';
+}
+
+/* ---- node metrics ---- */
+const NW = 208, PAD = 11, GAPX = 22, GAPY = 58;
+const metrics = new Map();
+for (const p of P){
+  const nameLines = wrap(p.n, NW - PAD * 2, FONT_N, 2);
+  const spouses = p.u.filter(u => u.n).slice(0, 2);
+  const spLines = spouses.map(u => clip('⚭ ' + u.n, NW - PAD * 2, FONT_S));
+  const extraSp = p.u.filter(u => u.n).length - spouses.length;
+  const h = PAD + nameLines.length * 16 + 15 + spLines.length * 14 + (extraSp > 0 ? 13 : 0) + PAD - 3;
+  metrics.set(p.i, { nameLines, spLines, extraSp, h });
+}
+
+/* ---- expansion state ---- */
+const expanded = new Set();
+P.forEach(p => { if (p.g <= 1) expanded.add(p.i); });
+const visKids = p => (expanded.has(p.i) ? p.k : []);
+
+/* ---- layout (works in both orientations) ---- */
+let orient = 'v';                       // 'v' = niður, 'h' = til hliðar
+const pos = new Map();
+let bbox = { w: 0, h: 0 };
+function layout(){
+  pos.clear();
+  const vert = orient === 'v';
+  const gapC = vert ? GAPX : 16;        // gap along the sibling axis
+  const gapD = vert ? GAPY : 74;        // gap between generations
+  const crossOf = p => vert ? NW : metrics.get(p.i).h;
+
+  const spanOf = p => {
+    const kids = visKids(p);
+    if (!kids.length) return crossOf(p);
+    let w = 0;
+    kids.forEach((k, i) => { w += spanOf(byId.get(k)) + (i ? gapC : 0); });
+    return Math.max(crossOf(p), w);
+  };
+  // depth (generation) offsets
+  const lvSize = [];
+  (function depth(p, lv){
+    lvSize[lv] = Math.max(lvSize[lv] || 0, vert ? metrics.get(p.i).h : NW);
+    visKids(p).forEach(k => depth(byId.get(k), lv + 1));
+  })(ROOT, 0);
+  const lvPos = []; let acc = 0;
+  for (let i = 0; i < lvSize.length; i++){ lvPos[i] = acc; acc += lvSize[i] + gapD; }
+
+  (function place(p, start, lv){
+    const span = spanOf(p), c = crossOf(p), m = metrics.get(p.i);
+    const off = start + span / 2 - c / 2;
+    pos.set(p.i, vert
+      ? { x: off, y: lvPos[lv], w: NW, h: m.h, lv }
+      : { x: lvPos[lv], y: off, w: NW, h: m.h, lv });
+    const kids = visKids(p);
+    if (kids.length){
+      const total = kids.reduce((s, k, i) => s + spanOf(byId.get(k)) + (i ? gapC : 0), 0);
+      let cx = start + (span - total) / 2;
+      kids.forEach(k => { const kw = spanOf(byId.get(k)); place(byId.get(k), cx, lv + 1); cx += kw + gapC; });
+    }
+  })(ROOT, 0, 0);
+
+  let maxX = 0, maxY = 0;
+  pos.forEach(v => { maxX = Math.max(maxX, v.x + v.w); maxY = Math.max(maxY, v.y + v.h); });
+  bbox = { w: maxX, h: maxY };
+}
+
+/* ---- render ---- */
+const svg = document.getElementById('svg');
+const gEdges = document.getElementById('edges');
+const gNodes = document.getElementById('nodes');
+let selected = null, lineage = new Set(), branchFocus = null;
+
+function render(){
+  layout();
+  const eh = [], nh = [];
+  for (const p of P){
+    const a = pos.get(p.i); if (!a) continue;
+    for (const kid of visKids(p)){
+      const b = pos.get(kid); if (!b) continue;
+      let d;
+      if (orient === 'v'){
+        const x1 = a.x + a.w / 2, y1 = a.y + a.h, x2 = b.x + b.w / 2, y2 = b.y;
+        const my = y1 + (y2 - y1) / 2;
+        const r = Math.min(11, Math.abs(x2 - x1) / 2, (y2 - y1) / 2);
+        if (Math.abs(x2 - x1) < 1) d = `M${x1},${y1}V${y2}`;
+        else {
+          const s = x2 > x1 ? 1 : -1;
+          d = `M${x1},${y1}V${my - r}Q${x1},${my} ${x1 + s * r},${my}H${x2 - s * r}Q${x2},${my} ${x2},${my + r}V${y2}`;
+        }
+      } else {
+        const x1 = a.x + a.w, y1 = a.y + a.h / 2, x2 = b.x, y2 = b.y + b.h / 2;
+        const mx = x1 + (x2 - x1) / 2;
+        const r = Math.min(11, Math.abs(y2 - y1) / 2, (x2 - x1) / 2);
+        if (Math.abs(y2 - y1) < 1) d = `M${x1},${y1}H${x2}`;
+        else {
+          const s = y2 > y1 ? 1 : -1;
+          d = `M${x1},${y1}H${mx - r}Q${mx},${y1} ${mx},${y1 + s * r}V${y2 - s * r}Q${mx},${y2} ${mx + r},${y2}H${x2}`;
+        }
+      }
+      const onLine = lineage.has(p.i) && lineage.has(kid);
+      const dim = branchFocus !== null && byId.get(kid).br !== branchFocus;
+      eh.push(`<path class="edge${onLine ? ' line' : ''}${dim ? ' dim' : ''}" d="${d}"/>`);
+    }
+  }
+  for (const p of P){
+    const a = pos.get(p.i); if (!a) continue;
+    const m = metrics.get(p.i);
+    const col = colOf(p);
+    const sel = selected === p.i;
+    const onLine = lineage.has(p.i);
+    const dim = branchFocus !== null && p.br !== branchFocus && p.g > 0;
+    let y = a.y + PAD + 12;
+    let t = '';
+    m.nameLines.forEach(l => { t += `<text class="nm" x="${a.x + PAD}" y="${y}">${esc(l)}</text>`; y += 16; });
+    const ls = lifeShort(p);
+    if (ls) { t += `<text class="yr" x="${a.x + PAD}" y="${y + 1}">${esc(ls)}</text>`; }
+    y += 15;
+    m.spLines.forEach(l => { t += `<text class="sp" x="${a.x + PAD}" y="${y}">${esc(l)}</text>`; y += 14; });
+    if (m.extraSp > 0) t += `<text class="sp" x="${a.x + PAD}" y="${y}">+${m.extraSp} maki til viðbótar</text>`;
+    let tg = '';
+    if (p.k.length){
+      const open = expanded.has(p.i);
+      const tgx = orient === 'v' ? a.x + a.w / 2 : a.x + a.w;
+      const tgy = orient === 'v' ? a.y + a.h : a.y + a.h / 2;
+      tg = `<g class="tg${open ? ' open' : ''}" data-tg="${p.i}" transform="translate(${tgx},${tgy})">
+        <circle r="11"/><text y="3.6">${open ? '–' : '+' + p.k.length}</text></g>`;
+    }
+    nh.push(`<g class="node${sel ? ' sel' : ''}${onLine && !sel ? ' line' : ''}${dim ? ' dim' : ''}" data-id="${p.i}">
+      <rect class="card" x="${a.x}" y="${a.y}" width="${a.w}" height="${a.h}" rx="11"/>
+      <path d="M${a.x + 11},${a.y} h-6 a5,5 0 0 0 -5,5 v${a.h - 10} a5,5 0 0 0 5,5 h6 z" fill="${col}"/>
+      ${t}${sel ? `<circle class="pulse" cx="${a.x + a.w / 2}" cy="${a.y + a.h / 2}" r="0"/>` : ''}${tg}
+    </g>`);
+  }
+  gEdges.innerHTML = eh.join('');
+  gNodes.innerHTML = nh.join('');
+}
+
+/* ---- viewport ---- */
+const view = document.getElementById('view');
+const stage = document.getElementById('stage');
+let tx = 0, ty = 0, sc = 1;
+const applyT = () => view.setAttribute('transform', `translate(${tx},${ty}) scale(${sc})`);
+const easeOut = t => 1 - Math.pow(1 - t, 3);
+let anim = null;
+function animateTo(nx, ny, ns, ms = 620){
+  if (anim) cancelAnimationFrame(anim);
+  const sx = tx, sy = ty, ss = sc, t0 = performance.now();
+  (function step(now){
+    const k = Math.min(1, (now - t0) / ms), e = easeOut(k);
+    tx = sx + (nx - sx) * e; ty = sy + (ny - sy) * e; sc = ss + (ns - ss) * e;
+    applyT();
+    if (k < 1) anim = requestAnimationFrame(step); else anim = null;
+  })(performance.now());
+}
+const headerEl = document.querySelector('header');
+function headerH(){
+  const h = headerEl.offsetHeight;
+  document.documentElement.style.setProperty('--hh', h + 'px');
+  return h;
+}
+/* the area of the stage that is actually visible next to header + panel */
+function viewRect(){
+  const pn = document.getElementById('panel');
+  const on = pn.classList.contains('on'), wide = window.innerWidth > 820;
+  const top = headerH();
+  return {
+    left: 0, top,
+    w: stage.clientWidth - (on && wide ? pn.offsetWidth : 0),
+    h: stage.clientHeight - top - (on && !wide ? pn.offsetHeight : 0)
+  };
+}
+function centerOn(id, scale, ms){
+  const a = pos.get(id); if (!a) return;
+  const r = viewRect();
+  const s = scale != null ? scale : Math.min(1.05, sc < 0.75 ? 1 : sc);
+  animateTo(r.left + r.w / 2 - (a.x + a.w / 2) * s, r.top + r.h / 2 - (a.y + a.h / 2) * s, s, ms);
+}
+function fitAll(ms = 620){
+  const r = viewRect();
+  const s = Math.max(0.05, Math.min(1.1, Math.min((r.w - 60) / bbox.w, (r.h - 60) / bbox.h)));
+  animateTo(r.left + r.w / 2 - bbox.w / 2 * s, r.top + Math.max(24, (r.h - bbox.h * s) / 2), s, ms);
+}
+
+/* pan + zoom */
+let drag = null;
+stage.addEventListener('pointerdown', e => {
+  if (e.target.closest('.tg') || e.target.closest('.node')) return;
+  drag = { x: e.clientX, y: e.clientY, tx, ty };
+  stage.classList.add('drag'); stage.setPointerCapture(e.pointerId);
+});
+stage.addEventListener('pointermove', e => {
+  if (!drag) return;
+  tx = drag.tx + (e.clientX - drag.x); ty = drag.ty + (e.clientY - drag.y); applyT();
+});
+const endDrag = () => { drag = null; stage.classList.remove('drag'); };
+stage.addEventListener('pointerup', endDrag);
+stage.addEventListener('pointercancel', endDrag);
+stage.addEventListener('wheel', e => {
+  e.preventDefault();
+  if (anim){ cancelAnimationFrame(anim); anim = null; }
+  const f = Math.exp(-e.deltaY * (e.ctrlKey ? 0.012 : 0.0022));
+  const ns = Math.max(0.05, Math.min(3, sc * f));
+  const r = stage.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+  tx = mx - (mx - tx) * (ns / sc); ty = my - (my - ty) * (ns / sc); sc = ns; applyT();
+}, { passive: false });
+// pinch
+let pinch = null;
+stage.addEventListener('touchstart', e => {
+  if (e.touches.length === 2){
+    const [a, b] = e.touches;
+    pinch = { d: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY), sc,
+      cx: (a.clientX + b.clientX) / 2, cy: (a.clientY + b.clientY) / 2, tx, ty };
+  }
+}, { passive: true });
+stage.addEventListener('touchmove', e => {
+  if (pinch && e.touches.length === 2){
+    e.preventDefault();
+    const [a, b] = e.touches;
+    const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    const ns = Math.max(0.05, Math.min(3, pinch.sc * (d / pinch.d)));
+    const r = stage.getBoundingClientRect(), mx = pinch.cx - r.left, my = pinch.cy - r.top;
+    tx = mx - (mx - pinch.tx) * (ns / pinch.sc); ty = my - (my - pinch.ty) * (ns / pinch.sc);
+    sc = ns; applyT();
+  }
+}, { passive: false });
+stage.addEventListener('touchend', () => { pinch = null; }, { passive: true });
+
+/* ---- selection ---- */
+function ancestors(id){
+  const out = []; let p = byId.get(id);
+  while (p && p.p != null){ p = byId.get(p.p); out.push(p.i); }
+  return out;
+}
+function select(id, opts = {}){
+  const anc = ancestors(id);
+  anc.forEach(a => expanded.add(a));
+  if (opts.open !== false && byId.get(id).k.length) expanded.add(id);
+  selected = id;
+  lineage = new Set([id, ...anc]);
+  render();
+  showPanel(id);
+  requestAnimationFrame(() => centerOn(id, opts.scale, opts.ms));
+  // sumir vafrar loka á sögubreytingar þegar skrá er opnuð beint af disk
+  try { history.replaceState(null, '', '#p' + id); } catch (e) {}
+}
+
+/* ---- panel ---- */
+const panel = document.getElementById('panel');
+function showPanel(id){
+  const p = byId.get(id);
+  const anc = ancestors(id).reverse();
+  const crumb = anc.map(a => `<button data-go="${a}">${esc(byId.get(a).n)}</button>`).join('<span>›</span>');
+  const kids = p.k.map(k => { const c = byId.get(k);
+    return `<button class="chip" data-go="${k}">${esc(c.n)}<span class="y">${esc(lifeShort(c))}</span></button>`; }).join('');
+  const unions = p.u.filter(u => u.n).map(u => `
+    <div class="mk">
+      <div class="lb">${esc(labelOf(u))}${u.nt ? ' · ' + esc(u.nt) : ''}</div>
+      <div class="nm2">${esc(u.n)}</div>
+      ${(u.b || u.d || u.pl) ? `<div class="dt">${esc(lifeLong(u))}</div>` : ''}
+      ${u.o ? `<div class="oc">${esc(u.o)}</div>` : ''}
+      ${u.pa ? `<div class="pa">${esc(u.pa)}</div>` : ''}
+    </div>`).join('');
+  panel.innerHTML = `
+    <button class="pclose" aria-label="Loka">×</button>
+    <h2>${esc(p.n)}</h2>
+    <div class="pref"><span class="dot" style="background:${colOf(p)}"></span>
+      ${p.br >= 0 ? 'Grein: ' + esc(branchName[p.br]) : 'Ættfaðir'} · ${esc(p.ref)} · ${p.g}. ættliður</div>
+    <div class="pdates">${esc(lifeLong(p)) || '—'}</div>
+    ${p.corr ? `<div class="corr">Leiðrétt frá ritinu · ${esc(p.corr)}</div>` : ''}
+    ${p.o ? `<p class="pocc">${esc(p.o)}</p>` : ''}
+    ${p.par ? `<p class="pocc" style="font-size:12px;color:var(--text-muted)">${esc(p.par)}</p>` : ''}
+    ${anc.length ? `<div class="sec"><h4>Ættarlína frá Stefáni</h4><div class="crumb">${crumb}</div></div>` : ''}
+    ${unions ? `<div class="sec"><h4>Makar</h4>${unions}</div>` : ''}
+    ${kids ? `<div class="sec"><h4>Börn (${p.k.length})</h4>${kids}</div>` : ''}
+    <div class="foot">Heimild: <em>Niðjatal Stefáns Sigurðssonar og Steinunnar Einarsdóttur á Hamri í Hamarsfirði</em>,
+    tekið saman af Önnu Margréti Birgisdóttur, Breiðdalsvík, 11. apríl 2025.</div>`;
+  panel.classList.add('on');
+}
+panel.addEventListener('click', e => {
+  if (e.target.closest('.pclose')){ panel.classList.remove('on'); return; }
+  const b = e.target.closest('[data-go]');
+  if (b) select(+b.dataset.go);
+});
+
+/* ---- node clicks ---- */
+gNodes.addEventListener('click', e => {
+  const tg = e.target.closest('.tg');
+  if (tg){
+    const id = +tg.dataset.tg;
+    expanded.has(id) ? expanded.delete(id) : expanded.add(id);
+    render(); return;
+  }
+  const n = e.target.closest('.node');
+  if (n) select(+n.dataset.id, { open: false, scale: sc, ms: 380 });
+});
+
+/* ---- search ---- */
+const norm = s => String(s || '').toLowerCase()
+  .normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .replace(/þ/g, 'th').replace(/ð/g, 'd').replace(/æ/g, 'ae').replace(/ö/g, 'o');
+const index = P.map(p => ({
+  id: p.i, n: norm(p.n), y: (yearOf(p.b) || '') + ' ' + (yearOf(p.d) || ''),
+  sp: p.u.filter(u => u.n).map(u => ({ raw: u.n, n: norm(u.n) }))
+}));
+const qEl = document.getElementById('q'), resEl = document.getElementById('res');
+let curRes = [], selRes = 0;
+function search(term){
+  const t = norm(term).trim();
+  if (t.length < 1) return [];
+  const words = t.split(/\s+/);
+  const out = [];
+  for (const it of index){
+    const hitSelf = words.every(w => it.n.includes(w) || it.y.includes(w));
+    let via = null;
+    if (!hitSelf){
+      const s = it.sp.find(s => words.every(w => s.n.includes(w)));
+      if (s) via = s.raw; else continue;
+    }
+    const starts = it.n.startsWith(words[0]);
+    const wordStart = new RegExp('(^|\\s)' + words[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(it.n);
+    out.push({ id: it.id, via, score: (hitSelf ? 0 : 40) + (starts ? 0 : wordStart ? 4 : 12) + it.n.length * 0.01 });
+  }
+  out.sort((a, b) => a.score - b.score);
+  return out.slice(0, 40);
+}
+function drawRes(){
+  if (!curRes.length){
+    resEl.innerHTML = qEl.value.trim() ? '<div class="res-empty">Ekkert nafn fannst</div>' : '';
+    resEl.classList.toggle('on', !!qEl.value.trim());
+    return;
+  }
+  resEl.innerHTML = curRes.map((r, i) => {
+    const p = byId.get(r.id);
+    return `<div class="res${i === selRes ? ' sel' : ''}" data-id="${r.id}">
+      <span class="dot" style="background:${colOf(p)}"></span>
+      <span class="nm">${esc(p.n)}${r.via ? `<span class="via">maki: ${esc(r.via)}</span>` : ''}</span>
+      <span class="yr">${esc(lifeShort(p))}</span></div>`;
+  }).join('');
+  resEl.classList.add('on');
+  const s = resEl.querySelector('.res.sel');
+  if (s) s.scrollIntoView({ block: 'nearest' });
+}
+qEl.addEventListener('input', () => { curRes = search(qEl.value); selRes = 0; drawRes(); });
+qEl.addEventListener('focus', () => { if (qEl.value.trim()){ curRes = search(qEl.value); drawRes(); } });
+qEl.addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown'){ e.preventDefault(); selRes = Math.min(selRes + 1, curRes.length - 1); drawRes(); }
+  else if (e.key === 'ArrowUp'){ e.preventDefault(); selRes = Math.max(selRes - 1, 0); drawRes(); }
+  else if (e.key === 'Enter'){ e.preventDefault(); if (curRes[selRes]) pick(curRes[selRes].id); }
+  else if (e.key === 'Escape'){ resEl.classList.remove('on'); qEl.blur(); }
+});
+resEl.addEventListener('click', e => { const r = e.target.closest('.res'); if (r) pick(+r.dataset.id); });
+function pick(id){
+  resEl.classList.remove('on');
+  branchFocus = null; drawLegend();
+  select(id, { open: true, scale: 1, ms: 700 });
+  qEl.blur();
+}
+document.addEventListener('click', e => { if (!e.target.closest('.search')) resEl.classList.remove('on'); });
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement !== qEl){ e.preventDefault(); qEl.focus(); qEl.select(); }
+  if (e.key === 'Escape'){ panel.classList.remove('on'); }
+});
+
+/* ---- legend ---- */
+function drawLegend(){
+  const rows = gen1.filter(p => branchCount[p.br] > 1).map(p => `
+    <div class="lg" data-br="${p.br}">
+      <span class="dot" style="background:${branchColor[p.br]}"></span>
+      <span class="n">${esc(p.n)}</span><span class="c">${branchCount[p.br]}</span></div>`).join('');
+  document.getElementById('legend').innerHTML =
+    `<h3>Greinar — börn Stefáns og Steinunnar</h3>${rows}` +
+    (branchFocus !== null ? '<button class="hide">← sýna allar greinar</button>' : '');
+}
+document.getElementById('legend').addEventListener('click', e => {
+  if (e.target.closest('.hide')){ branchFocus = null; drawLegend(); render(); return; }
+  const l = e.target.closest('.lg'); if (!l) return;
+  const br = +l.dataset.br;
+  branchFocus = branchFocus === br ? null : br;
+  if (branchFocus !== null){
+    const head = gen1.find(p => p.br === br);
+    P.forEach(p => { if (p.br === br) expanded.add(p.i); });
+    expanded.add(ROOT.i);
+    drawLegend(); render();
+    selected = head.i; lineage = new Set([head.i, ROOT.i]); render();
+    showPanel(head.i); requestAnimationFrame(() => centerOn(head.i, 0.75, 620));
+  } else { drawLegend(); render(); }
+});
+
+/* ---- toolbar ---- */
+let allOpen = false;
+document.getElementById('btnAll').addEventListener('click', e => {
+  allOpen = !allOpen;
+  if (allOpen){ P.forEach(p => expanded.add(p.i)); e.target.textContent = 'Loka öllu'; }
+  else { expanded.clear(); P.forEach(p => { if (p.g <= 1) expanded.add(p.i); }); e.target.textContent = 'Opna allt'; }
+  render();
+  // keep a readable scale rather than shrinking 349 people onto one screen
+  const focus = selected != null && pos.has(selected) ? selected : ROOT.i;
+  centerOn(focus, Math.max(sc, 0.55), 500);
+});
+document.getElementById('btnOrient').addEventListener('click', e => {
+  orient = orient === 'v' ? 'h' : 'v';
+  e.target.textContent = orient === 'v' ? '⇅' : '⇄';
+  e.target.title = orient === 'v' ? 'Snúa tré til hliðar' : 'Snúa tré niður';
+  render();
+  const focus = selected != null && pos.has(selected) ? selected : ROOT.i;
+  centerOn(focus, Math.max(Math.min(sc, 1), 0.55), 500);
+});
+document.getElementById('btnHome').addEventListener('click', () => {
+  branchFocus = null; drawLegend();
+  selected = ROOT.i; lineage = new Set([ROOT.i]); render();
+  showPanel(ROOT.i); requestAnimationFrame(() => centerOn(ROOT.i, 1, 620));
+});
+document.getElementById('btnFit').addEventListener('click', () => fitAll());
+document.getElementById('btnTheme').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+});
+
+/* ---- boot ---- */
+document.getElementById('cnt').textContent =
+  P.length.toLocaleString('is-IS') + ' einstaklingar · 6 ættliðir';
+drawLegend();
+render();
+let hash = null;
+try { hash = location.hash.match(/^#p(\d+)$/); } catch (e) {}
+if (hash && byId.has(+hash[1])) select(+hash[1], { scale: 1, ms: 10 });
+else {
+  // open on the ancestor couple at a readable size, not squeezed to fit
+  const r = viewRect();
+  const s = r.w < 700 ? 0.8 : 0.92;
+  const a = pos.get(ROOT.i);
+  sc = s; tx = r.w / 2 - (a.x + a.w / 2) * s;
+  ty = r.top + Math.max(28, Math.min(70, (r.h - bbox.h * s) / 2)); applyT();
+}
+addEventListener('resize', () => { headerH(); render(); });
+</script>
+
+<script>
+/* skráir vinnuþjón svo appið virki án nettengingar eftir fyrstu heimsókn */
+if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0){
+  addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+</script>
+</body>
+</html>

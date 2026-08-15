@@ -1,0 +1,41 @@
+{
+  "name": "Niðjatal frá Hamri í Hamarsfirði",
+  "short_name": "Hamarsætt",
+  "description": "Gagnvirkt ættartré Stefáns Sigurðssonar og Steinunnar Einarsdóttur á Hamri í Hamarsfirði – 349 niðjar í sex ættliðum.",
+  "lang": "is",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#f3f2ee",
+  "theme_color": "#f3f2ee",
+  "categories": [
+    "education",
+    "reference"
+  ],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
